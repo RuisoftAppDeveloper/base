@@ -1,0 +1,1428 @@
+<div class="module" id="nav">
+  <div class="head">
+    <div id="trans" class="current" style="width:25%;"></div>
+    <h2 data-tab="overview" style="width:25%;">概要</h2>
+    <h2 data-tab="consume" style="width:25%;">药品消耗</h2>
+    <h2 data-tab="scale" style="width:25%;">药品比例</h2>
+    <h2 data-tab="stock" style="width:25%;">药品库存</h2>
+  </div>
+  <div class="row" id="update-date-with-topnav">
+  	<span class="pull-right"><i class="fa fa-calendar"></i> 当月(09-01 ~ 09-15)</span>
+    <i class="fa fa-calendar"></i> 当日(09-15)
+  </div>
+  <div class="content" style="margin-top:3em;">
+    <div class="panel">
+    	<div class="row">
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+        	
+          <div class="portlet box blue">
+            <div class="portlet-title">
+              <div class="caption">当月全院药品消耗</div>
+            </div>
+            <div class="portlet-body">
+             
+              <table class="table tablefont" style="margin-bottom:0">
+                <thead>
+                  <tr>
+                    <th>名称</th>
+                    <th class="text-right">金额(万元)</th>
+                    <th class="text-right">人均(元)</th>
+                    <th class="order_num">环比</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>全院药品消耗</td>
+                    <td class="text-right">574.79</td>
+                    <td class="text-right">--</td>
+                    <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                  </tr>
+                  <tr>
+                    <td>门诊药品消耗</td>
+                    <td class="text-right">104.69</td>
+                    <td class="text-right">164.79</td>
+                    <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                  </tr>
+                  <tr>
+                    <td>住院药品消耗</td>
+                    <td class="text-right">470.11</td>
+                    <td class="text-right">2980.93</td>
+                    <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                  </tr>
+				  
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+        	
+          <div class="portlet box purple">
+            <div class="portlet-title">
+              <div class="caption">当月全院药品比例</div>
+            </div>
+            <div class="portlet-body">
+             
+              <table class="table tablefont" style="margin-bottom:0">
+                <thead>
+                  <tr>
+                    <th>名称</th>
+                    <th class="text-right">比例</th>
+                    <th class="order_num">环比</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>全院药品比例</td>
+                    <td class="text-right">43.35%</td>
+                    <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                  </tr>
+                  <tr>
+                    <td>门诊药品比例</td>
+                    <td class="text-right">36.66%</td>
+                    <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                  </tr>
+                  <tr>
+                    <td>住院药品比例</td>
+                    <td class="text-right">45.12%</td>
+                    <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" style="padding-top:5px;">	
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="dashboard-stat blue">
+            <div class="visual">
+              <i class="icon-hospital icon-4x"></i>
+            </div>
+            <div class="details">
+              <div class="number" style="padding-right:28px;">1016.95</div>
+              <span style="position:absolute;right:.5em;top:2.5em;color:#FFF;">万元</span>
+              <div class="desc">药品库存金额(09-15)</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="dashboard-stat purple">
+            <div class="visual">
+              <i class="icon-plus-sign-alt icon-4x"></i>
+            </div>
+            <div class="details">
+              <div class="number" style="padding-right:28px;">1064.85</div>
+              <span style="position:absolute;right:.5em;top:2.5em;color:#FFF;">万元</span>
+              <div class="desc">当月药品入库金额</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <!-- BEGIN PORTLET-->
+          <div class="portlet solid bordered light-grey">
+            <div class="portlet-title">
+              <div class="caption"><i class="icon-dashboard icon-large"></i>当月药品消耗金额排名</div>
+            </div>
+            <div class="portlet-body">
+              <div id="drug_order_div" style="height:300px;"></div>
+            </div>
+          </div>
+          <!-- END PORTLET-->
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+    
+    <div class="panel">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+
+					<div class="portlet box blue tabbable">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-money icon-large"></i>当月消耗排名
+              </div>
+            </div>
+            
+            <div class="portlet-body">
+              <div class=" portlet-tabs">
+                <ul class="nav nav-tabs">
+                  <li><a href="#tab_1_4" id="out-doc" data-toggle="tab">医生(住)</a></li>
+                  <li><a href="#tab_1_3" id="in-doc" data-toggle="tab">医生(门)</a></li>
+                  <li><a href="#tab_1_2" id="out-ke" data-toggle="tab">科室(住)</a></li>
+                  <li class="active"><a href="#tab_1_1" id="in-ke" data-toggle="tab">科室(门)</a></li>
+                </ul>
+              
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab_1_1">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>科室</th>
+                              <th class="text-right">金额(万元)</th>
+                               <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>妇产科门诊</th>
+                              <td class="text-right">14.87</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>肾内科门诊</th>
+                              <td class="text-right">14.72</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>消化科门诊</th>
+                              <td class="text-right">13.29</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>儿科门诊</th>
+                              <td class="text-right">10.19</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>内分泌科门诊</th>
+                              <td class="text-right">6.16</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>老干部门诊(城区)</th>
+                              <td class="text-right">5.99</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>感染科门诊</th>
+                              <td class="text-right">5.07</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+							<th class="order_num">8</th>
+                              <th>呼吸科门诊</th>
+                              <td class="text-right">4.05</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>老干部门诊(本部)</th>
+                              <td class="text-right">3.99</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>急诊科</th>
+                              <td class="text-right">3.83</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>          
+                  </div>
+                  <div class="tab-pane" id="tab_1_2">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>科室</th>
+                              <th class="text-right">金额(万元)</th>
+                               <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>神经外科</th>
+                              <td class="text-right">37.27</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>肿瘤血液科一</th>
+                              <td class="text-right">34.95</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>神经内科一</th>
+                              <td class="text-right">32.20</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>肿瘤血液科二</th>
+                              <td class="text-right">29.82</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>神经内科二</th>
+                              <td class="text-right">27.88</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>骨科三</th>
+                              <td class="text-right">25.08</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>骨科二</th>
+                              <td class="text-right">23.46</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">8</th>
+                              <th>消化内科</th>
+                              <td class="text-right">22.72</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>妇产科二</th>
+                              <td class="text-right">22.41</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>普外科一</th>
+                              <td class="text-right">21.07</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab_1_3">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>医生</th>
+                              <th class="text-right">金额(万元)</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>陈汝英</th>
+                              <td class="text-right">7.19</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>徐正元</th>
+                              <td class="text-right">7.19</td>                              
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>韩洪波</th>
+                              <td class="text-right">6.34</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>吴群</th>
+                              <td class="text-right">5.48</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>王满响</th>
+                              <td class="text-right">4.47</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>招玉龙</th>
+                              <td class="text-right">4.30</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>叶隆昌</th>
+                              <td class="text-right">3.78</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">8</th>
+                              <th>卢良花</th>
+                              <td class="text-right">3.25</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>胡芬芳</th>
+                              <td class="text-right">3.01</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>李玉芬</th>
+                              <td class="text-right">3.00</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab_1_4">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>医生</th>
+                              <th class="text-right">金额(万元)</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>李莹莹</th>
+                              <td class="text-right">15.71</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>王利花</th>
+                              <td class="text-right">11.81</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>卢志林</th>
+                              <td class="text-right">10.87</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>陈晨</th>
+                              <td class="text-right">10.54</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>胡娜</th>
+                              <td class="text-right">10.49</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>王加斌</th>
+                              <td class="text-right">9.88</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>常春红</th>
+                              <td class="text-right">9.79</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">8</th>
+                              <th>费金雷</th>
+                              <td class="text-right">8.62</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>吴新铖</th>
+                              <td class="text-right">8.44</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>赵坤</th>
+                              <td class="text-right">8.38</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </div>
+
+
+
+
+    <div class="panel">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="portlet box green tabbable">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-money icon-large"></i>当月比例排名
+              </div>
+            </div>
+            
+            <div class="portlet-body">
+              <div class=" portlet-tabs">
+                <ul class="nav nav-tabs">
+                  <li><a href="#tab_2_4" id="out-doc" data-toggle="tab">医生(住)</a></li>
+                  <li><a href="#tab_2_3" id="in-doc" data-toggle="tab">医生(门)</a></li>
+                  <li><a href="#tab_2_2" id="out-ke" data-toggle="tab">科室(住)</a></li>
+                  <li class="active"><a href="#tab_2_1" id="in-ke" data-toggle="tab">科室(门)</a></li>
+                </ul>
+        
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab_2_1">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>科室</th>
+                              <th class="text-right">药品比例</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>老干部门诊(城区)</th>
+                              <td class="text-right">96.74%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>老干部门诊(本部)</th>
+                              <td class="text-right">86.09%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>皮肤科门诊</th>
+                              <td class="text-right">85.29%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>肛肠科门诊</th>
+                              <td class="text-right">74.41%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>中医科门诊</th>
+                              <td class="text-right">65.32%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>内分泌科门诊</th>
+                              <td class="text-right">63.60%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-down arrow-green"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>肾内科门诊</th>
+                              <td class="text-right">59.79%</td>
+                               <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">8</th>
+                              <th>结核病门诊</th>
+                              <td class="text-right">57.83%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>儿科门诊</th>
+                              <td class="text-right">57.54%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>肿瘤科门诊</th>
+                              <td class="text-right">53.10%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>          
+                  </div>
+                  <div class="tab-pane" id="tab_2_2">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>科室</th>
+                              <th class="text-right">药品比例</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>妇产科门诊</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>骨科一</th>
+                              <td class="text-right">77.98%</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>感染科</th>
+                              <td class="text-right">74.22%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>骨科二</th>
+                              <td class="text-right">71.49%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>神经外科</th>
+                              <td class="text-right">70.91%</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>胸心外科</th>
+                              <td class="text-right">65.85%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>普外科二</th>
+                              <td class="text-right">63.92%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">8</th>
+                              <th>神经内科二</th>
+                              <td class="text-right">63.76%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>骨科三</th>
+                              <td class="text-right">63.21%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>普外科一</th>
+                              <td class="text-right">62.63%</td>
+                              <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab_2_3">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>医生</th>
+                              <th class="text-right">药品比例</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>司进枚</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>陆婷婷</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>陈芳芳</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>王之霞</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>王元伟</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>卢立武</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>胡金娥</th>
+                              <td class="text-right">100.00%</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">8</th>
+                              <th>王利花</th>
+                              <td class="text-right">99.35%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>曹金桂</th>
+                              <td class="text-right">99.23%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>李玉芬</th>
+                              <td class="text-right">98.71%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab_2_4">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="order_num">排名</th>
+                              <th>医生</th>
+                              <th class="text-right">药品比例</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th class="order_num">1</th>
+                              <th>宋吉奎</th>
+                              <td class="text-right">99.45%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">2</th>
+                              <th>王满响</th>
+                              <td class="text-right">99.28%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">3</th>
+                              <th>韩洪波</th>
+                              <td class="text-right">98.91%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">4</th>
+                              <th>卢立国</th>
+                              <td class="text-right">98.33%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">5</th>
+                              <th>刘金凤</th>
+                              <td class="text-right">96.43%</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">6</th>
+                              <th>吕茂洲</th>
+                              <td class="text-right">96.02%</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">7</th>
+                              <th>叶松</th>
+                              <td class="text-right">95.86%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">8</th>
+                              <th>卢其香</th>
+                              <td class="text-right">95.42%</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">9</th>
+                              <th>陈方</th>
+                              <td class="text-right">93.97%</td>
+                              <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                            </tr>
+                            <tr>
+                              <th class="order_num">10</th>
+                              <th>燕好军</th>
+                              <td class="text-right">93.86%</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    <div class="panel">
+    	<div class="row">
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+          <!--BEGIN TABS-->
+          <div class="portlet box purple tabbable">
+            <div class="portlet-title">
+              <div class="caption"><i class="icon-dashboard icon-large"></i>当月药品库存</div>
+            </div>
+            <div class="portlet-body">
+              <!-- <div id="income_construct_div" class="chart" style="height:220px;"></div> -->
+              <div class="portlet-tabs">
+                <ul class="nav nav-tabs">
+                  <li><a data-toggle="tab" id="amount" href="#portlet_tab1"> 数量 </a></li>
+                  <li class="active"><a data-toggle="tab" id="amoney" href="#portlet_tab2"> 金额 </a></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="portlet_tab1" class="tab-pane">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>药品名</th>
+						  <th class="text-right">单价(元)</th>
+                          <th class="text-right">数量</th>
+                          <th class="text-right">单位</th>
+                          <th class="text-right">金额(万元)</th>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">速效救心丸</th>
+                        </tr>
+                        <tr>
+						  <td class="text-right" colspan="2">34.90</td>
+                          <td class="text-right">233983</td>
+                          <td class="text-right">丸</td>
+                          <td class="text-right">0.45</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">消炎片※</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">28.75</td>
+						  <td class="text-right">55224</td>
+                          <td class="text-right">片</td>
+                          <td class="text-right">4.41</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">炉甘石粉</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">40.00</td>
+						  <td class="text-right">50000</td>
+                          <td class="text-right">g</td>
+                          <td class="text-right">0.40</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">脑复康</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">9.70</td>
+						  <td class="text-right">39923</td>
+                          <td class="text-right">片</td>
+                          <td class="text-right">0.39</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">氯化钠注射液100ml</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right"  colspan="2">9.40</td>
+						  <td class="text-right">38124</td>
+                          <td class="text-right">袋</td>
+                          <td class="text-right">35.84</td>
+                        </tr>
+						<th colspan="5" style="background:#F5F5F5;">六味地黄丸</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right"  colspan="2">9.10</td>
+						  <td class="text-right">36800</td>
+                          <td class="text-right">丸</td>
+                          <td class="text-right">0.17</td>
+                        </tr>
+						<th colspan="5" style="background:#F5F5F5;">跳骨片※</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">88.60</td>
+						  <td class="text-right">34848</td>
+                          <td class="text-right">片</td>
+                          <td class="text-right">4.29</td>
+                        </tr>
+						</tr>
+						<th colspan="5" style="background:#F5F5F5;">水飞蓟宾葡甲胺</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">61.74</td>
+						  <td class="text-right">34620</td>
+                          <td class="text-right">片</td>
+                          <td class="text-right">3.56</td>
+                        </tr>
+						</tr>
+						<th colspan="5" style="background:#F5F5F5;">杞菊地黄丸</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">13.50</td>
+						  <td class="text-right">34000</td>
+                          <td class="text-right">丸</td>
+                          <td class="text-right">0.02</td>
+                        </tr>
+						</tr>
+						<th colspan="5" style="background:#F5F5F5;">溴已新片</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">2.30</td>
+						  <td class="text-right">30195</td>
+                          <td class="text-right">片</td>
+                          <td class="text-right">0.07</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                    
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet solid bordered light-grey" style="padding-bottom:0;">
+                      <div class="portlet-title">
+                        <div class="caption"><i class="icon-dashboard icon-large"></i>当月库存数量排行</div>
+                      </div>
+                      <div class="portlet-body">
+                        <div id="storeAmountdiv" style="height:243px;"></div>
+                      </div>
+                    </div>
+                    <!-- END PORTLET-->
+                  </div>
+                  <div id="portlet_tab2" class="tab-pane active">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>药品名</th>
+                          <th class="text-right">单价(元)</th>
+                          <th class="text-right">数量</th>
+                          <th class="text-right">单位</th>
+                          <th class="text-right">金额(万元)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">单唾液酸四己糖</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">177.50</td>
+                          <td class="text-right">2670</td>
+                          <td class="text-right">支</td>
+                          <td class="text-right">47.39</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">氯化钠100ml</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">9.40</td>
+                          <td class="text-right">38124</td>
+                          <td class="text-right">袋</td>
+                          <td class="text-right">35.84</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">头孢哌酮钠他唑</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">117.00</td>
+                          <td class="text-right">2901</td>
+                          <td class="text-right">瓶</td>
+                          <td class="text-right">33.94</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">奥美拉唑钠</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">38.00</td>
+                          <td class="text-right">8257</td>
+                          <td class="text-right">支</td>
+                          <td class="text-right">31.38</td>
+                        </tr>
+                        <tr>
+                        	<th colspan="5" style="background:#F5F5F5;">前列地尔</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">123.0</td>
+                          <td class="text-right">1998</td>
+                          <td class="text-right">瓶</td>
+                          <td class="text-right">24.58</td>
+                        </tr>
+						<tr>
+                        	<th colspan="5" style="background:#F5F5F5;">血塞通</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">31.80</td>
+                          <td class="text-right">7207</td>
+                          <td class="text-right">支</td>
+                          <td class="text-right">22.92</td>
+                        </tr>
+						<tr>
+                        	<th colspan="5" style="background:#F5F5F5;">免疫球蛋白</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">600.00</td>
+                          <td class="text-right">334</td>
+                          <td class="text-right">支</td>
+                          <td class="text-right">20.04</td>
+                        </tr>
+						<tr>
+                        	<th colspan="5" style="background:#F5F5F5;">头孢尼西钠</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">48.80</td>
+                          <td class="text-right">4103</td>
+                          <td class="text-right">瓶</td>
+                          <td class="text-right">20.02</td>
+                        </tr>
+						<tr>
+                        	<th colspan="5" style="background:#F5F5F5;">氯化钠250ml</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">10.20</td>
+                          <td class="text-right">16644</td>
+                          <td class="text-right">袋</td>
+                          <td class="text-right">16.98</td>
+                        </tr>
+						<tr>
+                        	<th colspan="5" style="background:#F5F5F5;">多西他赛</th>
+                        </tr>
+                        <tr>
+                          <td class="text-right" colspan="2">521.00</td>
+                          <td class="text-right">292</td>
+                          <td class="text-right">支</td>
+                          <td class="text-right">15.21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- BEGIN PORTLET-->
+                    <div class="portlet solid bordered light-grey" style="padding-bottom:0;">
+                      <div class="portlet-title">
+                        <div class="caption"><i class="icon-dashboard icon-large"></i>当月库存金额排行</div>
+                      </div>
+                      <div class="portlet-body">
+                        <div id="instorageNumdiv" style="height:243px;"></div>
+                      </div>
+                    </div>
+                    <!-- END PORTLET-->
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+     
+      
+    </div>
+  </div>
+</div>
+<script>
+var currentIndex = 0;
+var navTab = new Slide({
+	//autoPlay: true,
+	targetSelector: '#nav',
+	targetdom: 'nav',
+	wrapSelector: '.content',
+	indicatorSelector: '#nav .head > h2',
+	indicatorCls: '',
+	transSelector:'#trans',
+	slideFunction:slideCallback
+});
+$("#nav .head > h2").click(function() {
+	navTab.to($(this).index()-1);
+})
+function slideCallback(index){
+	
+	if(index==0){
+		firstLoad();
+	}
+	else if(index == 1){
+		secondLoad();
+	}
+	else if(index == 2){
+		thirdLoad();
+	}
+	else if(index == 3){
+		fourthLoad();
+	}
+	currentIndex = index;
+}
+
+$(function(){
+	firstLoad();
+	$("#page-refresh").unbind();
+	$("#page-refresh").click(function(e){
+		$("#page-refresh").css("color","#999");
+		navTab.to(currentIndex);
+		$("#page-refresh").css("color","#FFF");
+	});
+	$("#amount").click(function(){
+		setTimeout(storeAmount,100);
+	});
+	$("#amoney").click(function(){
+		setTimeout(instorageNum,100);
+	});
+	$("#update-date-with-topnav").width($(".row:eq(1)").width()-20);
+});
+	
+	
+function firstLoad(){
+	drugOrder();
+}
+
+function secondLoad(){
+	
+}
+
+function thirdLoad(){
+	
+}
+
+function fourthLoad(){
+	instorageNum();
+}
+
+//药品消耗排名
+function drugOrder() {
+	var feeOrderData = [ {
+		"chartKey" : "前列地尔",
+		"chartValue" : 32.19
+	}, {
+		"chartKey" : "奥美拉唑钠",
+		"chartValue" : 22.61
+	}, {
+		"chartKey" : "氯化钠100ml",
+		"chartValue" : 21.47
+	}, {
+		"chartKey" : "血塞通",
+		"chartValue" : 16.32
+	}, {
+		"chartKey" : "哌拉西林钠他唑",
+		"chartValue" : 15.07
+	}, {
+		"chartKey" : "头孢尼西钠",
+		"chartValue" : 14.53
+	}, {
+		"chartKey" : "脑蛋白水解物",
+		"chartValue" : 14.03
+	}, {
+		"chartKey" : "依达拉奉※",
+		"chartValue" : 13.21
+	}, {
+		"chartKey" : "氯化钠250ml",
+		"chartValue" : 12.29
+	}, {
+		"chartKey" : "鹿瓜多肽",
+		"chartValue" : 12.27
+	} ];
+
+	// SERIAL CHART
+	var feeOrderColumn = new AmCharts.AmSerialChart();
+	feeOrderColumn.dataProvider = feeOrderData;
+	feeOrderColumn.categoryField = "chartKey";
+	feeOrderColumn.marginTop = 0;
+	feeOrderColumn.rotate = true;
+
+	// AXES
+	// category axis
+	var categoryAxis2 = feeOrderColumn.categoryAxis;
+	categoryAxis2.autoGridCount = false;
+	categoryAxis2.gridCount = 50;
+	categoryAxis2.gridAlpha = 0;
+	categoryAxis2.gridColor = "#000000";
+	categoryAxis2.axisColor = "#555555";
+
+	// Duration value axis
+	var otheryearAxis2 = new AmCharts.ValueAxis();
+	otheryearAxis2.gridAlpha = 0.05;
+	otheryearAxis2.axisAlpha = 0;
+	//otheryearAxis2.inside = true;
+	feeOrderColumn.addValueAxis(otheryearAxis2);
+
+	// GRAPHS
+	// otheryear graph
+	var feeGraph2 = new AmCharts.AmGraph();
+	feeGraph2.title = "111";
+	feeGraph2.valueField = "chartValue";
+	feeGraph2.balloonText = "[[category]]: <b>[[value]]</b>万元";
+	feeGraph2.type = "column";
+	feeGraph2.lineAlpha = 0;
+	feeGraph2.fillAlphas = 0.8;
+	//graph.fillColors = "#FE00FF";
+	feeOrderColumn.addGraph(feeGraph2);
+
+	// CURSOR
+	var chartCursor2 = new AmCharts.ChartCursor();
+	chartCursor2.zoomable = false;
+	chartCursor2.cursorAlpha = 0;
+	chartCursor2.valueLineEnabled = true;
+	chartCursor2.valueLineBalloonEnabled = true;
+	feeOrderColumn.addChartCursor(chartCursor2);
+
+	// WRITE
+	feeOrderColumn.write("drug_order_div");
+}
+
+
+
+//药品库存数量排名
+function storeAmount(){
+	// SERIAL instorageAmount
+	var instorageAmountData=[
+			{
+					"chartKey": "速效救心丸",
+					"chartValue": 233983
+			},
+			{
+					"chartKey": "消炎片※",
+					"chartValue": 55224
+			},
+			{
+					"chartKey": "炉甘石粉",
+					"chartValue": 50000
+			},
+			{
+					"chartKey": "脑复康",
+					"chartValue": 39923
+			},
+			{
+					"chartKey": "氯化钠注射液100ml",
+					"chartValue": 38124
+			},
+			{
+					"chartKey": "六味地黄丸",
+					"chartValue": 36800
+			},
+			{
+					"chartKey": "跳骨片※",
+					"chartValue": 34848
+			},
+			{
+					"chartKey": "水飞蓟宾葡甲胺",
+					"chartValue": 34620
+			},
+			{
+					"chartKey": "杞菊地黄丸",
+					"chartValue": 34000
+			},
+			{
+					"chartKey": "溴已新片",
+					"chartValue": 30195
+			}
+	];
+	var instorageAmount;
+	instorageAmount = new AmCharts.AmSerialChart();
+	instorageAmount.dataProvider = instorageAmountData;
+	instorageAmount.categoryField = "chartKey";
+	instorageAmount.startDuration = 1;
+	instorageAmount.rotate = true;
+ // instorageAmount.depth3D = 10; 
+
+	// AXES
+	// category
+	var categoryAxis = instorageAmount.categoryAxis;
+	categoryAxis.labelRotation = 90;
+	categoryAxis.gridPosition = "start";
+
+	// GRAPH
+	var inpatientGraph = new AmCharts.AmGraph();
+	inpatientGraph.valueField = "chartValue";
+	inpatientGraph.balloonText = "[[category]]: <b>[[value]]</b>";
+	inpatientGraph.type = "column";
+	inpatientGraph.lineAlpha = 0;
+	inpatientGraph.fillAlphas = 0.8;
+	inpatientGraph.fillColors = "#52B4F5"; 
+	instorageAmount.addGraph(inpatientGraph);
+	
+	// AXES
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = .1;
+	valueAxis.axisAlpha = 0;
+	valueAxis.labelsEnabled = false;
+	instorageAmount.addValueAxis(valueAxis);
+
+	// CURSOR
+	var inpatientCursor = new AmCharts.ChartCursor();
+	inpatientCursor.cursorAlpha = 0;
+	inpatientCursor.zoomable = false;
+	inpatientCursor.categoryBalloonEnabled = false;
+	instorageAmount.addChartCursor(inpatientCursor);
+
+	instorageAmount.creditsPosition = "top-right";
+
+	instorageAmount.write("storeAmountdiv");
+	
+}
+//药品库存金额排名
+function instorageNum(){
+	var instorageNum;
+	var instorageNumData=[
+			{
+					"chartKey": "单唾液酸四己糖",
+					"chartValue": 47.39
+			},
+			{
+					"chartKey": "氯化钠100ml",
+					"chartValue": 35.84
+			},
+			{
+					"chartKey": "头孢哌酮钠",
+					"chartValue": 33.94
+			},
+			{
+					"chartKey": "奥美拉唑钠",
+					"chartValue": 31.38
+			},
+			{
+					"chartKey": "前列地尔",
+					"chartValue": 24.58
+			},
+			{
+					"chartKey": "血塞通",
+					"chartValue": 22.92
+			},
+			{
+					"chartKey": "免疫球蛋白",
+					"chartValue": 20.04
+			},
+			{
+					"chartKey": "头孢尼西钠",
+					"chartValue": 20.02
+			},
+			{
+					"chartKey": "氯化钠250ml",
+					"chartValue": 16.98
+			},
+			{
+					"chartKey": "多西他赛",
+					"chartValue": 15.21
+			}
+	];
+	// SERIAL instorageNum
+	instorageNum = new AmCharts.AmSerialChart();
+	instorageNum.dataProvider = instorageNumData;
+	instorageNum.categoryField = "chartKey";
+	instorageNum.startDuration = 1;
+	instorageNum.rotate = true;
+ // instorageNum.depth3D = 10; 
+
+	// AXES
+	// category
+	var categoryAxis = instorageNum.categoryAxis;
+	categoryAxis.labelRotation = 90;
+	categoryAxis.gridPosition = "start";
+
+	// GRAPH
+	var inpatientGraph = new AmCharts.AmGraph();
+	inpatientGraph.valueField = "chartValue";
+	inpatientGraph.balloonText = "[[category]]: <b>[[value]]</b>万元";
+	inpatientGraph.type = "column";
+	inpatientGraph.lineAlpha = 0;
+	inpatientGraph.fillAlphas = 0.8;
+	inpatientGraph.fillColors = "#89DE65"; 
+	instorageNum.addGraph(inpatientGraph);
+	
+	// AXES
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = .1;
+	valueAxis.axisAlpha = 0;
+	valueAxis.labelsEnabled = false;
+	instorageNum.addValueAxis(valueAxis);
+
+
+	// CURSOR
+	var inpatientCursor = new AmCharts.ChartCursor();
+	inpatientCursor.cursorAlpha = 0;
+	inpatientCursor.zoomable = false;
+	inpatientCursor.categoryBalloonEnabled = false;
+	instorageNum.addChartCursor(inpatientCursor);
+
+	instorageNum.creditsPosition = "top-right";
+
+	instorageNum.write("instorageNumdiv");
+	
+}
+</script>

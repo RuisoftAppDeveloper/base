@@ -1,0 +1,272 @@
+<html>
+<head>
+<title>医院信息平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<script src="../cordova.js" type="text/javascript"></script>
+<style>
+	div{
+    tap-highlight-color: rgba(0,0,0,0);
+		focus-ring-color: rgba(0, 0, 0, 0);
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-focus-ring-color: rgba(0, 0, 0, 0);
+		-moz-tap-highlight-color: rgba(0,0,0,0);
+		-moz-focus-ring-color: rgba(0, 0, 0, 0);
+	}
+	body {margin:0;background-image:url(assets/img/welcome_bg.jpg);background-color:#113b7b;background-size:100% 100%;background-position:top center;background-repeat:no-repeat;background-color:#3482c0;position:relative;}
+	.circle {border-radius:50%;border:1px solid #FFF;width:100px;height:100px;position:absolute;}
+	.sys_circle {display:none;border-radius:50%;100px;position:absolute;background-repeat:no-repeat;background-position:center center;background-size: 60% 60%;}
+	.sys_circle span {position:absolute;text-align:center;display:block;color:#FFF;font-size:0.8em;}
+	.tiny_circle {border-radius:50%;100px;position:absolute;opacity:0.75}
+	.header {padding-top: 20px;}
+
+	#circle_1 {opacity: 0.8;border:2px solid #FFF;}
+	#circle_2 {opacity: 0.6;}
+	#circle_3 {opacity: 0.5;}
+	#circle_4 {opacity: 0.4;}
+	
+	#sys_circle_1 {background-image: url(assets/img/bg_title_bi.png);background-color:#FF9600;}
+	#sys_circle_2 {background-image: url(assets/img/bg_title_eig.png);background-color:#00C6FF;background-size: 60% 50%;}
+	#sys_circle_3 {background-image: url(assets/img/bg_title_esb.png);background-color:#92D700;}
+	
+	#tiny_circle_1 {background:#7dd7ff;}
+	#tiny_circle_2 {background:#f6cd91;}
+	#tiny_circle_3 {background:#caff5b;}
+	
+	.version {position:absolute;bottom:5px;color:#DDD;font-size:.5em;width:100%;text-align:center;}
+	
+	.updateTips {visibility:hidden;position:absolute;font-size:0.8em;
+		-webkit-animation-duration: .5s;
+		animation-duration: .5s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+	.updateTips .tipTitle {position:relative;background:#FFB848;color:#FFF;height:2.5em;line-height:2.5em;text-align:center;}
+	.updateTips .tipTitle .close {position:absolute;right:7px;top:7px;}
+	.updateTips .updateContainer {padding:0 10px;background:#CDEEF5;}
+	.updateTips .updateContainer .versionDetail {overflow:hidden;height:40px;line-height:40px;}
+	.updateTips .updateContainer .versionDetail .date {float:right;}
+	.updateTips .updateContainer .upadteDetailNote {background:#FFF;padding:5px;text-align:center;height:16em;overflow-y:auto;overflow-x:hidden;}
+	.updateTips .updateContainer .upadteDetailNote ul {padding-left:30px;}
+	.updateTips .updateContainer .upadteDetailNote ul li {text-align:left;line-height:25px;}
+	
+	
+	.updateTips .updateContainer .download {overflow:hidden;height:50px;line-height:30px;padding:10px 0 0;}
+	.updateTips .updateContainer .download a {display:block;background:#4DA6FF;height:30px;line-height:30px;width:12em;text-align:center;text-decoration:none;color:#FFF;float:right;}
+	#quitTip {display:none;position:absolute;font-size:10px;color:#FFF;background:#333;width:150px;opacity:0.8;border-radius:5px;padding:5px 0;text-align:center;bottom:50px;}
+</style>
+<link href="assets/css/animate.css" rel="stylesheet" type="text/css">
+<script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/res_circle.js"></script>
+<script>
+		document.addEventListener("backbutton",onBackKeyDown,false);
+		var flag = false;
+		function onBackKeyDown(){
+			var time1 = new Date();
+			if(!flag){
+				//alert('再按一次退出！');
+				$("#quitTip").fadeIn();
+				window.setTimeout(
+					'$("#quitTip").fadeOut();'
+				,1500)
+				flag = true;
+				tempTime =  new Date();
+			}else{
+				var curTime = new Date();
+				var pastTime = curTime - tempTime;
+				flag = false;
+				tempTime = 0;
+				if(pastTime<1500){
+					navigator.app.exitApp();
+				}else{
+					$("#quitTip").fadeOut();
+					onBackKeyDown();
+				}
+			}
+		}
+		
+		
+  	$(function(){
+  		var wh = $(window).height();
+		var ww = $(window).width();
+		
+		var header_h = ww * 0.1;
+		
+		//白色大圈尺寸
+		var circle_w = ww * 0.666;
+		var circle_h = circle_w;
+		
+		//彩色系统圈尺寸
+		var sys_circle_w = circle_w * 0.45;
+		var sys_circle_h = sys_circle_w;
+		
+		//点缀小圈尺寸
+		var tiny_circle_w = sys_circle_w * 0.3;
+		var tiny_circle_h = tiny_circle_w;
+		
+		//白色圈标准位置
+		var stardard_left = ww * 0.167;
+		var stardard_top = ( wh - circle_w ) / 2;
+		
+		//偏移量
+		var m_step = ww * 0.005;
+  	
+			$("body").width(ww).height(wh);
+			
+			//顶部logo
+			$(".header img").width(ww);
+			$(".header img").height(ww * 0.394);
+
+			$(".circle").width(circle_w).height(circle_h);
+			$("#circle_1").css({"left":stardard_left,"top":stardard_top + header_h});
+			$("#circle_2").css({"left":stardard_left + m_step * 5,"top":stardard_top + m_step * 6 + header_h});
+			$("#circle_3").css({"left":stardard_left - m_step * 4,"top":stardard_top - m_step * 2 + header_h});
+			$("#circle_4").css({"left":stardard_left + m_step * 6,"top":stardard_top - m_step * 4 + header_h});
+
+			$(".sys_circle").width(sys_circle_w).height(sys_circle_h).fadeIn(1000);
+			$(".sys_circle span").width(sys_circle_w).css("top",sys_circle_h + m_step * 3);
+			$("#sys_circle_1").css({"left":stardard_left + m_step * 20,"top":stardard_top - m_step * 20 + header_h});
+			$("#sys_circle_2").css({"left":stardard_left - m_step * 10,"top":stardard_top + circle_h - sys_circle_h + m_step * 10 + header_h});
+			$("#sys_circle_3").css({"left":stardard_left + circle_w - m_step * 40,"top":stardard_top + sys_circle_h - m_step * 10 + header_h});
+
+			$(".tiny_circle").width(tiny_circle_w).height(tiny_circle_h);
+			$("#tiny_circle_1").css({"left":stardard_left - m_step * 8,"top":stardard_top + sys_circle_h - m_step * 15 + header_h});
+			$("#tiny_circle_2").css({"left":stardard_left + sys_circle_w * 2 - m_step * 10,"top":stardard_top + m_step * 10 + header_h});
+			$("#tiny_circle_3").css({"left":stardard_left + sys_circle_w + m_step * 10,"top":stardard_top + sys_circle_h * 2 + m_step * 3 + header_h});
+
+			var circle_1 = document.getElementById("circle_1");
+			var circle_2 = document.getElementById("circle_2");
+			var circle_3 = document.getElementById("circle_3");
+			var circle_4 = document.getElementById("circle_4");
+			
+			var sys_circle_1 = document.getElementById("sys_circle_1");
+			var sys_circle_2 = document.getElementById("sys_circle_2");
+			var sys_circle_3 = document.getElementById("sys_circle_3");
+
+			var tiny_circle_1 = document.getElementById("tiny_circle_1");
+			var tiny_circle_2 = document.getElementById("tiny_circle_2");
+			var tiny_circle_3 = document.getElementById("tiny_circle_3");
+
+			new res_circle().toMove(circle_1,50,2,2);//args: 对象，速度，步伐，半径
+			new res_circle().toMove(circle_2,50,1,4);
+			new res_circle().toMove(circle_3,50,2,5);
+			new res_circle().toMove(circle_4,50,1,4);
+
+			new res_circle().toMove(sys_circle_1,15,1,5);
+			new res_circle().toMove(sys_circle_2,20,1,5);
+			new res_circle().toMove(sys_circle_3,25,1,5);
+
+			new res_circle().toMove(tiny_circle_1,30,1,5);
+			new res_circle().toMove(tiny_circle_2,40,1,5);
+			new res_circle().toMove(tiny_circle_3,50,1,5);
+			
+			$("#sys_circle_1").click(function(){
+				window.location.href="pages/bi.html";
+			});
+			$("#sys_circle_2").click(function(){
+				window.location.href="pages/eig.html";
+			});
+			$("#sys_circle_3").click(function(){
+				window.location.href="pages/service.html";
+			});
+		
+		
+			$(".updateTips").width(ww * 0.8).css("left",ww * 0.1);
+			
+			var quitLeft = (ww - 150) / 2; 
+			$("#quitTip").css("left",quitLeft);
+			
+			var version = 3.1;
+			$.getJSON('http://www.realesoft.com/download/apk/update.json',function(data){ 
+			//$.getJSON('update/update.json',function(data){ 
+				//遍历json中的每个entry
+				$.each(data,function(i,field){
+					var updateVersion = field.updateVersion;
+					var updateInfo = field.updateInfo;
+					var detail = "";
+					$.each(updateInfo,function(j,field1){
+						var updateDate = field1.date;
+						var newVersion = field1.version;
+						var apkSize = field1.apkSize;
+						var updateDetail = field1.updateDetail;
+						$(".versionDetail").html("<div class='date'>"+updateDate+"</div>"+newVersion);
+						$(".download span").html(apkSize);
+						$.each(updateDetail,function(k,field2){
+							detail += "<li>"+field2.key+"</li>";
+						});
+					});
+					
+					$(".upadteDetailNote ul").html(detail);
+					
+					
+					if(updateVersion > version) {
+						$(".updateTips").show().css("visibility","visible").addClass("slideInDown");
+					}
+				}); 
+			});
+			
+			$(".close").click(function(){
+				$(".updateTips").removeClass("slideInDown").addClass("slideOutUp");
+			});
+		
+		});
+		
+  </script>
+	
+</head>
+
+<body>
+	<div class="header">
+    <img src="assets/img/header.png">
+  </div>
+  
+  <div class="circle" id="circle_1"></div>
+  <div class="circle" id="circle_2"></div>
+  <div class="circle" id="circle_3"></div>
+  <div class="circle" id="circle_4"></div>
+  
+  <div class="sys_circle" id="sys_circle_3"><span>医疗公共服务</span></div>
+  <div class="sys_circle" id="sys_circle_2"><span>健康信息采集</span></div>
+  <div class="sys_circle" id="sys_circle_1"><span>运营管理决策</span></div>
+  
+  <div class="tiny_circle" id="tiny_circle_1"></div>
+  <div class="tiny_circle" id="tiny_circle_2"></div>
+  <div class="tiny_circle" id="tiny_circle_3"></div>
+  
+  <div class="version">锐软科技 &copy; 2016 V1.0.3.1</div>
+  
+  
+  <div class="updateTips" style="display:none;">
+  	<div class="tipTitle">
+    	更新提醒
+    	<div class="close"><img src="assets/img/update-close.png"></div>
+    </div>
+    <div class="updateContainer">
+    	
+    	<div class="versionDetail">
+      	<div class="date">11月16日更新</div>
+      	V1.0.3.0
+      </div>
+      <div class="upadteDetailNote">
+      	============更新说明============
+        <ul>
+        	<li>优化界面载入动态效果</li>
+        	<li>新增功能菜单</li>
+        	<li>优化整体框架UI效果</li>
+        	<li>新增网络配置及日期选择的功能演示</li>
+        	<li>数据与医院信息平台Web版最新数据保持一致</li>
+        	<li>版本号调整与医院信息平台Web版大版本保持一致</li>
+        </ul>
+      </div>
+      <div class="download">
+      	<a href="http://www.realesoft.com/download/apk/ResHipDemo.apk">立即下载</a>
+        <span>大小：10.8M</span>
+      </div>
+    	
+    </div>
+  </div>
+  <div id="quitTip">请再按一次后退键退出程序</div>
+  
+
+</body>
+</html>

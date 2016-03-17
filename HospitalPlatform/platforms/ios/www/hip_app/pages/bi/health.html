@@ -1,0 +1,150 @@
+  <div class="row" id="update-date">
+  	<span class="pull-right"><i class="fa fa-calendar"></i> 当月(09-01 ~ 09-15)</span>
+    <i class="fa fa-calendar"></i> 当日(09-15)
+  </div>
+  <div class="row">	
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="portlet box blue">
+        <div class="portlet-title">
+          <div class="caption">当月全院统筹</div>
+        </div>
+        <div class="portlet-body">
+          <table class="table" style="margin-bottom:0;">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th class="text-right">金额(万元)</th>
+                <th class="text-center order_num">同比</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>全院结算</td>
+                <td class="text-right">1037.01</td>
+                <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+              </tr>
+              <tr>
+                <td>门诊结算</td>
+                <td class="text-right">39.10</td>
+                <td class="text-center"><i class="fa fa-arrow-down text-green"></i></td>
+              </tr>
+              <tr>
+                <td>住院结算</td>
+                <td class="text-right">997.91</td>
+                <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="portlet box yellow">
+        <div class="portlet-title">
+          <div class="caption">当月结算患者人次</div>
+        </div>
+        <div class="portlet-body">
+          <table class="table" style="margin-bottom:0;">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th class="text-right">总人次</th>
+                <th class="text-right">医保人次</th>
+                <th class="text-right">医保占比</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>全院结算</td>
+                <td class="text-right">3065</td>
+                <td class="text-right">1599</td>
+                <td class="text-right">52.17%</td>
+              </tr>
+              <tr>
+                <td>门诊结算</td>
+                <td class="text-right">1687</td>
+                <td class="text-right">761</td>
+                <td class="text-right">45.11%</td>
+              </tr>
+              <tr>
+                <td>住院结算</td>
+                <td class="text-right">1378</td>
+                <td class="text-right">838</td>
+                <td class="text-right">60.81%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-12" style="margin-bottom:5.5em;">
+      <div class="portlet box purple tabbable">
+        <div class="portlet-title">
+          <div class="caption">
+            <i class="icon-money icon-large"></i>当月结算患者占比
+          </div>
+        </div>
+        <div class="portlet-body">
+          <div id="patient-div" style="height:220px;"></div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+<script>
+$(function(){
+	patientPie()	
+	$("#update-date").width($(".row:eq(1)").width()-20);
+});
+//结算患者占比饼图
+function patientPie() {
+	var insureTypeData = [ {
+		"chartKey" : "新农合",
+		"chartValue" : 959,
+		"chartColor" : "#EB4E45"
+	}, {
+		"chartKey" : "宿迁医保",
+		"chartValue" : 640,
+		"chartColor" : "#F6CF94"
+	}];
+
+	var pie2 = new AmCharts.AmPieChart();
+	pie2.dataProvider = insureTypeData;
+	pie2.titleField = "chartKey";
+	pie2.valueField = "chartValue";
+	pie2.colorField = "chartColor";
+	pie2.sequencedAnimation = true;
+	pie2.startEffect = "elastic";
+	pie2.innerRadius = "40%";
+	pie2.startDuration = 2;
+	pie2.labelRadius = 1;
+	pie2.pieX = "30%";
+	//pie2.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+	//pie2.depth3D = 10;
+	//pie2.angle = 15;
+	//pie2.radius = 70;
+	pie2.labelText = "";
+	pie2.startDuration = 2;
+	pie2.radius = 90;
+	pie2.labelRadius = 15;
+
+	// LEGEND
+	legend2 = new AmCharts.AmLegend();
+
+	legend2.align = "right";
+	//legend1.color = "#FFF";
+	legend2.position = "absolute";
+	legend2.top = -10;
+	legend2.right = 20;
+	legend2.borderAlpha = 0;
+	legend2.valueWidth = 0.2;
+	legend2.horizontalGap = 0;
+	legend2.width = 100;
+	legend2.valueText = "";
+
+	pie2.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> 人次 ([[percents]]%)</span>";
+
+	pie2.addLegend(legend2);
+	pie2.write("patient-div");
+}
+</script>      

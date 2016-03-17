@@ -1,0 +1,68 @@
+<div class="col-md-6 col-sm-6 col-xs-12">
+          	<!-- BEGIN PORTLET-->
+            <div class="portlet box green">
+              <div class="portlet-title">
+                <div class="caption"><i class="icon-dashboard icon-large"></i>自助终端</div>
+              </div>
+              <div class="portlet-body">
+                <div id="emergencyFeePiediv" class="chart" style="height:220px;"></div>
+              </div>
+            </div>
+<script>
+$(function(){	
+	emergencyFeePie();
+	});
+//急诊费用比例饼图
+function emergencyFeePie(){
+	var emergencyFeePie;
+	var emergencyFeeData = [{
+		"chartKey" : "急诊费用",
+		"chartValue" : 30.8,
+		"chartColor" : "#C8E49C"
+		}, {
+		"chartKey" : "其他",
+		"chartValue" : 69.2,
+		"chartColor" : "#E7DAC9"
+		}]
+
+	// PIE CHART
+	// PIE CHART
+	var pie2 = new AmCharts.AmPieChart();
+	pie2.dataProvider = emergencyFeeData;
+	pie2.titleField = "chartKey";
+	pie2.valueField = "chartValue";
+	pie2.colorField = "chartColor";
+	pie2.sequencedAnimation = true;
+	pie2.startEffect = "elastic";
+	pie2.innerRadius = "40%";
+	pie2.startDuration = 2;
+	pie2.labelRadius = 1;
+	pie2.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+	//pie2.depth3D = 10;
+	//pie2.angle = 15;
+	pie2.pieX = "40%";
+	pie2.labelText = "";
+	pie2.startDuration = 2;
+	pie2.radius = 95;
+	pie2.labelRadius = 15;
+	// LEGEND
+	legend2 = new AmCharts.AmLegend();
+	
+	legend2.align = "right";
+	//legend1.color = "#FFF";
+	legend2.position = "absolute";
+	legend2.top = -10;
+	legend2.right = 0;
+	legend2.borderAlpha = 0;
+	legend2.valueWidth = 0.2;
+	legend2.horizontalGap = 0;
+	legend2.width = 70;
+	legend2.valueText = "";
+
+	pie2.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+	pie2.addLegend(legend2);
+
+	pie2.write("emergencyFeePiediv"); 
+}
+</script>      
+

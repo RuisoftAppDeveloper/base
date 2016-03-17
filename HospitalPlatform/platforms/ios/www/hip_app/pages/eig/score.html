@@ -1,0 +1,266 @@
+	<div class="row" style="padding-top:5px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="total-score">
+      	<div class="score-title">当日综合得分(09-15)</div>
+        <div class="score">85.4</div>
+      </div>
+    </div>
+	</div>
+  <div class="row">
+    <div class="col-md-12">
+    	<div class="portlet box" id="service-detail">
+        <div class="portlet-title" style="background:#ED512A;border:1px solid #ED512A;text-align:center;">
+          <div style="text-align:center;font-size:1.2em;margin-bottom: 1em;">分项得分</div>
+        </div>
+        <div class="portlet-body" style="background:#ED512A;border:1px solid #ED512A">
+          <div id="radar-compare" class="chart" style="height:220px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet solid bordered light-grey" style="margin-bottom:0;">
+        <div class="portlet-title">
+          <div class="caption"><i class="fa fa-line-chart"></i>近1周综合评分趋势</div>
+          <!--<div class="date-range"><i class="fa fa-calendar"></i> 07-23 ~ 07-29</div>-->
+        </div>
+          <div id="score-total" class="chart" style="height:180px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style>
+.total-score {
+	position: relative;
+	background-image: -webkit-linear-gradient(top, #F47325, #ED512A);
+	background-image: linear-gradient(top, #F47325, #ED512A);
+	color: #FFF;
+	text-align: center;
+	padding: 2em 0 2em 0;
+	/*margin-bottom: 5px;*/
+}
+.total-score .date {position: absolute;left:10px;top:10px;}
+.total-score .score-title { line-height: 2em;font-size: 1.2em; }
+.total-score .score { font-size: 6em;font-family: "Segoe UI",Helvetica, Arial, sans-serif; }
+
+.date-range {position: absolute;right:10px;top:10px;}
+</style>
+
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+$(function(){	
+	radarChart();
+	scoreTrend();
+});
+
+
+function radarChart() {
+	//RADAR CHART
+
+	var radarChart;
+	var radarData = [
+					{
+					  "type": "数据范围",
+					  "count": 71.4
+					},
+					{
+					  "type": "实际上报率",
+					  "count": 88.5
+					},
+					{
+					  "type": "规范性",
+					  "count": 95.0
+					},
+					{
+					  "type": "字段饱和度",
+					  "count": 70.6
+					},
+					{
+					  "type": "业务关联性",
+					  "count": 100.0
+					},
+					{
+					  "type": "及时性",
+					  "count": 0.0
+					},
+					{
+					  "type": "连续性",
+					  "count": 100.0
+					}
+				  ];
+
+	// RADAR CHART
+	radarChart = new AmCharts.AmRadarChart();
+	radarChart.dataProvider = radarData;
+	radarChart.categoryField = "type";
+	radarChart.startDuration = 2;
+	radarChart.startEffect = "easeOutSine";
+	radarChart.precision = 1;
+
+	radarChart.backgroundColor = "#000";
+	radarChart.radius = "40%";
+	radarChart.color = "#FFF";
+
+	// VALUE AXIS
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.axisAlpha = 0.15;
+	valueAxis.minimum = 0;
+	valueAxis.maximum = 100;
+	valueAxis.dashLength = 3;
+	valueAxis.axisTitleOffset = 10;
+	valueAxis.gridCount = 5;
+	radarChart.addValueAxis(valueAxis);
+
+	// GRAPH
+	var graph = new AmCharts.AmGraph();
+	graph.valueField = "count";
+	graph.bullet = "round";
+	graph.lineColor = "#72E300";
+	graph.fillAlphas = 0.2;
+	graph.balloonText = "[[category]]：[[value]]分 ";
+
+	// GUIDES
+	// blue fill
+	var guide = new AmCharts.Guide();
+	guide.angle = 0;
+	guide.tickLength = 0;
+	guide.toAngle = 360;
+	guide.value = 0;
+	guide.toValue = 60;
+	guide.fillColor = "#FFC926";
+	guide.fillAlpha = 1;
+	valueAxis.addGuide(guide);
+
+	// GUIDES
+	// blue fill
+	var guide = new AmCharts.Guide();
+	guide.angle = 0;
+	guide.tickLength = 0;
+	guide.toAngle = 360;
+	guide.value = 60;
+	guide.toValue = 80;
+	guide.fillColor = "#DDF7FF";
+	guide.fillAlpha = 1;
+	valueAxis.addGuide(guide);
+
+	// GUIDES
+	// blue fill
+	var guide = new AmCharts.Guide();
+	guide.angle = 0;
+	guide.tickLength = 0;
+	guide.toAngle = 360;
+	guide.value = 80;
+	guide.toValue = 100;
+	guide.fillColor = "#FFFF4D";
+	guide.fillAlpha = 0.8;
+	valueAxis.addGuide(guide);
+
+	radarChart.addGraph(graph);
+	//radarChart.addTitle("分项得分");
+
+	// WRITE
+	radarChart.write("radar-compare");
+}
+
+
+function scoreTrend(){
+	//得分趋势
+	var chart;
+
+	var chartData =
+		[
+		{"dataRange":76.0,"date":"09-09"},
+		{"dataRange":78.0,"date":"09-10"},
+		{"dataRange":80.2,"date":"09-11"},
+		{"dataRange":78.3,"date":"09-12"},
+		{"dataRange":82.8,"date":"09-13"},
+		{"dataRange":83.0,"date":"09-14"},
+		{"dataRange":85.4,"date":"09-15"}
+		];
+
+	// SERIAL CHART
+	// efficent CHART
+	chart = new AmCharts.AmSerialChart();
+	var everGraph = new AmCharts.AmGraph();
+	var gatherGraph = new AmCharts.AmGraph();
+
+	//chart.dataProvider = chartData;
+	chart.dataProvider = chartData;
+	chart.categoryField = "date";
+	chart.startDuration = 1;
+	chart.precision = 1;
+	chart.autoMargins = false;
+	chart.marginLeft = 5;
+	chart.marginRight = 5;
+	chart.marginTop = 0;
+	chart.marginBottom = 35;
+
+	// AXES
+	// category axis
+	var categoryAxis = chart.categoryAxis;
+	categoryAxis.labelsEnabled = true;
+	categoryAxis.gridCount = 0;
+	categoryAxis.gridAlpha = 0;
+	categoryAxis.gridColor = "#999";
+	categoryAxis.axisColor = "#999";
+	categoryAxis.labelRotation = 45;
+		
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = .1;
+	valueAxis.axisAlpha = 0;
+	chart.addValueAxis(valueAxis);
+
+	// value
+	// in case you don't want to change default settings of value axis,
+	// you don't need to create it, as one value axis is created automatically.
+
+	// GRAPH
+	var dataRangeGraph = new AmCharts.AmGraph();
+
+	dataRangeGraph.valueField = "dataRange";
+	dataRangeGraph.title = "综合评分";
+	dataRangeGraph.type = "line";
+	dataRangeGraph.lineThickness = 1;
+	//dataRangeGraph.lineColor = "#FCD202";
+	dataRangeGraph.bullet = "round";
+	dataRangeGraph.bulletBorderAlpha = 1;
+	dataRangeGraph.bulletBorderThickness = 2;
+	dataRangeGraph.labelPosition = "right";
+	dataRangeGraph.balloonText = "综合评分：[[value]]分 ";
+	dataRangeGraph.fillAlphas = 0.3;
+	chart.addGraph(dataRangeGraph);
+
+	// CURSOR
+	var cursor = new AmCharts.ChartCursor();
+	//chart.cursorPosition = "mouse";
+	cursor.zoomable = false;
+	cursor.cursorAlpha = 0;
+	chart.addChartCursor(cursor);
+
+	var categoryAxis = chart.categoryAxis;
+	categoryAxis.gridPosition = "start";
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.maximum = 100;
+	chart.addValueAxis(valueAxis);
+
+	// LEGEND
+	var legend = new AmCharts.AmLegend();
+	legend.bulletType = "square";
+	legend.equalWidths = true;
+	legend.valueWidth = 40;
+	legend.labelWidth = 60;
+	legend.useGraphSettings = true;
+	legend.forceWidth = true;
+	legend.borderColor = "#F00";
+	legend.borderAlpha = 0;
+	//chart.addLegend(legend);
+
+	chart.creditsPosition = "top-right";
+	// TITLE
+	//chart.addTitle("最近7天综合得分趋势");
+	chart.write("score-total");
+}
+</script>

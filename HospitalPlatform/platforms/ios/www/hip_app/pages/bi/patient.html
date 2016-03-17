@@ -1,0 +1,984 @@
+<div class="module" id="nav">
+  <div class="head">
+    <div id="trans" class="current" style="width:33.33333%;"></div>
+    <h2 data-tab="income" style="width:33.33333%;">概要</h2>
+    <h2 data-tab="equipment" style="width:33.33333%;">挂号退号</h2>
+    <h2 data-tab="expenses" style="width:33.33333%;">入院出院</h2>
+  </div>
+  <div class="row" id="update-date-with-topnav">
+  	<span class="pull-right"><i class="fa fa-calendar"></i> 当月(09-01 ~ 09-15)</span>
+    <i class="fa fa-calendar"></i> 当日(09-15)
+  </div>
+  <div class="content" style="margin-top:3em;">
+    <div class="panel">	
+      <div class="row">
+      	<div class="col-xs-12 col-md-6">
+     		<div class="portlet paddingless">
+            <div class="portlet-body">
+              <!--BEGIN TABS-->
+              <div class="tabbable tabbable-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#tab_1" data-toggle="tab" id="clinic_tab">门诊患者</a></li>
+                  <li><a href="#tab_2" data-toggle="tab" id="in_tab">住院患者</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab_1">
+                    <div class="row">
+                      <h2 class="bg_green">当月就诊人次</h2>
+                        <table class="table tablefont">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th class="text-right">数量(人次)</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>挂号数量</td>
+                              <td class="text-right" id="REG_QTY_M">12617</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <td>退号数量</td>
+                              <td class="text-right" id="CANCEL_QTY_M">108</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                      <h2 class="bg_blue">当月付款方式构成</h2>
+                      <div class="col-md-12">
+                        <div id="clinic_pay_div" class="chart" style="height:220px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="tab_2">
+                    <div class="row">
+                      <h2 class="bg_cho">当日就诊人次</h2>
+                      <div class="col-md-12">
+                        <table class="table tablefont">
+                          <thead>
+                            <tr>
+                              <th>名称</th>
+                              <th class="text-right">数量</th>
+                              <th class="text-center order_num">环比</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>在院人数</td>
+                              <td class="text-right">776</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <td>入院人数</td>
+                              <td class="text-right">1587</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <td>出院人数</td>
+                              <td class="text-right">1520</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                            <tr>
+                              <td>患者流动</td>
+                              <td class="text-right arrow-red">+67</td>
+                              <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <h2 class="bg_red">当月付款方式构成</h2>
+                      <div class="col-md-12">
+                        <div id="in_pay_div" style="height:220px;"></div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                    
+                    	<h2 class="bg_green">当月床位使用率排名</h2>
+                      <table class="table table-hover" style="margin-bottom:0">
+                        <thead>
+                          <tr>
+                            <th class="text-center order_num">#</th>
+                            <th>科室/类别</th>
+                            <th class="text-right">编制数</th>
+                            <th class="text-right">使用率</th>
+                            <th class="text-center order_num">趋势</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                          	<th class="text-center">1</th>
+                            <th>心内科一</th>
+                            <td class="text-right">40</td>
+                            <td class="text-right">126.55%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">2</th>
+                            <th>肿瘤血液科二</th>
+                            <td class="text-right">46</td>
+                            <td class="text-right">114.39%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">3</th>
+                            <th>普外科二</th>
+                            <td class="text-right">40</td>
+                            <td class="text-right">99.05%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">4</th>
+                            <th>骨科一</th>
+                            <td class="text-right">36</td>
+                            <td class="text-right">98.88%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">5</th>
+                            <th>心内科二</th>
+                            <td class="text-right">32</td>
+                            <td class="text-right">98.73%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+        
+                        </tbody>
+                      </table>
+                            
+                    	<h2 class="bg_orange">当月平均住院日排名</h2>
+                      <table class="table table-hover" style="margin-bottom:0">
+                        <thead>
+                          <tr>
+                            <th class="text-center order_num">#</th>
+                            <th>科室/类别</th>
+                            <th class="text-right">平均(天)</th>
+                            <th class="text-center order_num">环比</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                          	<th class="text-center">1</th>
+                            <th>心内科二</th>
+                            <td class="text-right">16.23</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">2</th>
+                            <th>骨科一</th>
+                            <td class="text-right">14.45</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">3</th>
+                            <th>肿瘤血液科一</th>
+                            <td class="text-right">13.84</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">4</th>
+                            <th>骨科二</th>
+                            <td class="text-right">11.77</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                          	<th class="text-center">5</th>
+                            <th>神经外科</th>
+                            <td class="text-right">11.76</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="row">
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="portlet box blue tabbable">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-money icon-large"></i>当月挂号数量排名
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class=" portlet-tabs">
+                <ul class="nav nav-tabs">
+                  <li><a data-toggle="tab" id="doc_tab" href="#portlet_tab2"><i class="fa fa-user-md"></i> 医生</a></li>
+                  <li class="active"><a data-toggle="tab" id="dept_tab" href="#portlet_tab1"><i class="fa fa-hospital-o"></i> 科室</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="portlet_tab1" class="tab-pane active">
+                    <table class="table table-hover" style="margin-bottom:0">
+                      <thead>
+                        <tr>
+                          <th class="text-center order_num">#</th>
+                          <th>科室</th>
+                          <th class="text-right">数量(次)</th>
+                          <th class="text-center order_arrow">环比</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                        	<th class="text-center">1</th>
+                          <th>妇产科门诊</th>
+                          <td class="text-right">1920</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+                        	<th class="text-center">2</th>
+                          <th>儿科门诊</th>
+                          <td class="text-right">1369</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+                        	<th class="text-center">3</th>
+                          <th>急诊科</th>
+                          <td class="text-right">987</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+                        	<th class="text-center">4</th>
+                          <th>消化科门诊</th>
+                          <td class="text-right">767</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+                        	<th class="text-center">5</th>
+                          <th>老干部门诊(城区)</th>
+                          <td class="text-right">724</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div id="portlet_tab2" class="tab-pane">
+                    <table class="table table-hover" style="margin-bottom:0">
+                      <thead>
+                        <tr>
+                        	<th class="text-center order_num">#</th>
+                          <th>医生/科室</th>
+                          <th class="text-right">数量(次)</th>
+                          <th class="text-center order_arrow">环比</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                        	<th class="text-center">1</th>
+                          <th>其他</th>
+                          <td class="text-right">1717</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+	                        <th class="text-center">2</th>
+                          <th>陈汝英</th>
+                          <td class="text-right">556</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+                        	<th class="text-center">3</th>
+                          <th>王满响</th>
+                          <td class="text-right">425</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+                        	<th class="text-center">4</th>
+                          <th>徐正元</th>
+                          <td class="text-right">372</td>
+                          <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                        </tr>
+                        <tr>
+                        	<th class="text-center">5</th>
+                          <th>李玉芬</th>
+                          <td class="text-right">364</td>
+                          <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+      <div class="row">
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="portlet box yellow tabbable">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-money icon-large"></i>当月看诊比例
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class="sample-table-content"><div id="cureEfficiencyPiediv" style="height:200px;"></div></div>
+            </div>
+          </div>
+        </div>
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="portlet solid bordered light-grey">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-bar-chart icon-large"></i>近一周挂号趋势
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="register_div" class="chart" style="height:210px;margin-bottom:10px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>	
+    </div>
+
+    <div class="panel">
+      <div class="row">	
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="dashboard-stat red">
+            <div class="visual">
+              <i class="icon-hospital icon-4x"></i>
+            </div>
+            <div class="details">
+              <div class="number">72.32%</div>
+              <div class="desc">当月床位使用率</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="dashboard-stat yellow">
+            <div class="visual">
+              <i class="icon-hospital icon-4x"></i>
+            </div>
+            <div class="details">
+              <div class="number">8.7</div>
+              <div class="desc">当月平均住院日</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+      
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+
+          <div class="portlet solid bordered light-grey">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="fa fa-line-chart"></i>近 1 周在院及入出院人次趋势
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="in_out_hos_trend_div" style="height:200px;"></div>
+            </div>
+          </div>
+
+          <div class="portlet box blue">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-dashboard icon-large"></i>当日科室在院人数排名
+              </div>
+            </div>
+            <div class="portlet-body">
+              <table class="table table-hover" style="margin-bottom: 0px !important;">
+                <thead>
+                  <tr>
+                  	<th class="text-center order_num">#</th>
+                    <th>科室</th>
+                    <th class="text-right">平均人数</th>
+                    <th class="order_num">趋势</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  	<th class="text-center">1</th>
+                    <th>肿瘤血液科二</th>
+                    <td class="text-right">55</td>
+                    <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                  </tr>
+                  <tr>
+	                  <th class="text-center">2</th>
+                    <th>心内科一</th>
+                    <td class="text-right">53</td>
+                    <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                  </tr>
+                  <tr>
+                  	<th class="text-center">3</th>
+                    <th>妇产科二</th>
+                    <td class="text-right">51</td>
+                    <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                  </tr>
+                  <tr>
+                  	<th class="text-center">4</th>
+                    <th>儿科二</th>
+                    <td class="text-right">43</td>
+                    <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                  </tr>
+                  <tr>
+                  	<th class="text-center">5</th>
+                    <th>普外科二</th>
+                    <td class="text-right">42</td>
+                    <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="portlet box yellow">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-dashboard icon-large"></i>当月入出院患者人次统计
+              </div>
+            </div>
+            <div class="portlet-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                  	<th class="text-center order_num">#</th>
+                    <th>科室</th>
+                    <th class="text-right">入院</th>
+                    <th class="text-right">出院</th>
+                    <th class="text-right">流动</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  	<th class="text-center">1</th>
+                    <th>妇产科二</th>
+                    <td class="text-right">213</td>
+                    <td class="text-right">188</td>
+                    <td class="text-right arrow-red">+25</td>
+                  </tr>
+                  <tr>
+	                  <th class="text-center">2</th>
+                    <th>妇产科一</th>
+                    <td class="text-right">125</td>
+                    <td class="text-right">126</td>
+                    <td class="text-right arrow-green">-1</td>
+                  </tr>
+                  <tr>
+                  	<th class="text-center">3</th>
+                    <th>神经内科一</th>
+                    <td class="text-right">82</td>
+                    <td class="text-right">80</td>
+                    <td class="text-right arrow-red">+2</td>
+                  </tr>
+                  <tr>
+                  	<th class="text-center">4</th>
+                    <th>儿科二</th>
+                    <td class="text-right">75</td>
+                    <td class="text-right">80</td>
+                    <td class="text-right arrow-green">-5</td>
+                  </tr>
+                  <tr>
+                  	<th class="text-center">5</th>
+                    <th>心内科一</th>
+                    <td class="text-right">74</td>
+                    <td class="text-right">72</td>
+                    <td class="text-right arrow-red">+2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+	var currentIndex = 0;
+  var navTab = new Slide({
+		//autoPlay: true,
+		targetSelector: '#nav',
+		targetdom: 'nav',
+		wrapSelector: '.content',
+		indicatorSelector: '#nav .head > h2',
+		indicatorCls: '',
+		transSelector:'#trans',
+		slideFunction:slideCallback
+	});
+	$("#nav .head > h2").click(function() {
+		navTab.to($(this).index()-1);
+	})
+	function slideCallback(index){
+		if(index == 0){
+			setTimeout("firstLoad()",500);
+		}
+		else if(index == 1){
+			setTimeout("secondLoad()",500);
+		}
+		else if(index == 2){
+			setTimeout("thirdLoad()",500);
+				
+		}
+		currentIndex = index;
+	}
+	
+	
+	$(function() {	
+		firstLoad();
+		$("#in_tab").click(function(){
+			setTimeout(inPayPie, 100);
+		});
+		$("#clinic_tab").click(function(){
+			setTimeout(clinicPayPie, 100);
+		});
+		$("#page-refresh").unbind();
+		$("#page-refresh").click(function(e){
+			$("#page-refresh").css("color","#999");
+			navTab.to(currentIndex);
+			$("#page-refresh").css("color","#FFF");
+		});
+		$("#update-date-with-topnav").width($(".row:eq(1)").width()-20);
+	});
+	function firstLoad(){
+		clinicPayPie();//门诊-医疗付款方式比例饼图
+	}
+	
+	function secondLoad(){
+		cureEfficiency();//就诊有效率、就诊状态
+		registerTrend();
+	}
+	
+	function thirdLoad(){
+		inOutHosTrend();
+	}
+	
+	
+	
+	//门诊-医疗付款方式比例饼图
+	function clinicPayPie() {
+		var clinicPayDate = [ {
+			"chartKey" : "自费",
+			"chartValue" : 11617,
+		}, {
+			"chartKey" : "老干部",
+			"chartValue" : 919,
+		}, {
+			"chartKey" : "惠民医疗",
+			"chartValue" : 81,
+		}, {
+			"chartKey" : "看守所",
+			"chartValue" : 0,
+		}];
+
+		// PIE CHART
+		var pie2 = new AmCharts.AmPieChart();
+		pie2.dataProvider = clinicPayDate;
+		pie2.titleField = "chartKey";
+		pie2.valueField = "chartValue";
+		pie2.colorField = "chartColor";
+		pie2.sequencedAnimation = true;
+		pie2.startEffect = "elastic";
+		pie2.innerRadius = "40%";
+		pie2.startDuration = 2;
+		pie2.labelRadius = 1;
+		pie2.pieX = "30%";
+		//pie2.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+		//pie2.depth3D = 10;
+		//pie2.angle = 15;
+		//pie2.radius = 70;
+		pie2.labelText = "";
+		pie2.startDuration = 2;
+		pie2.radius = 95;
+		pie2.labelRadius = 15;
+
+		// LEGEND
+		legend2 = new AmCharts.AmLegend();
+
+		legend2.align = "right";
+		//legend1.color = "#FFF";
+		legend2.position = "absolute";
+		legend2.top = -10;
+		legend2.right = 5;
+		legend2.borderAlpha = 0;
+		legend2.valueWidth = 0.2;
+		legend2.horizontalGap = 0;
+		legend2.width = 90;
+		legend2.valueText = "";
+
+		pie2.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b>人次 ([[percents]]%)</span>";
+
+		pie2.addLegend(legend2);
+		pie2.write("clinic_pay_div");
+	}
+	
+	//住院-医疗付款方式比例饼图
+	function inPayPie() {
+		var inPatientPayDate = [ {
+			"chartKey" : "自费",
+			"chartValue" : 663,
+		}, {
+			"chartKey" : "新农合",
+			"chartValue" : 682,
+		}, {
+			"chartKey" : "宿迁医保",
+			"chartValue" : 144,
+		}, {
+			"chartKey" : "老干部",
+			"chartValue" : 31,
+		} ];
+
+		// PIE CHART
+		var pie1 = new AmCharts.AmPieChart();
+		pie1.dataProvider = inPatientPayDate;
+		pie1.titleField = "chartKey";
+		pie1.valueField = "chartValue";
+		pie1.colorField = "chartColor";
+		pie1.sequencedAnimation = true;
+		pie1.startEffect = "elastic";
+		pie1.innerRadius = "40%";
+		pie1.startDuration = 2;
+		pie1.pieX = "30%";
+		//pie1.labelRadius = 1;
+		//pie1.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+		//pie1.depth3D = 10;
+		//pie1.angle = 15;
+		//pie1.radius = 70;
+		pie1.labelText = "";
+		pie1.startDuration = 2;
+		pie1.radius = 95;
+		pie1.labelRadius = 15;
+
+		// LEGEND
+		legend1 = new AmCharts.AmLegend();
+
+		legend1.align = "right";
+		//legend1.color = "#FFF";
+		legend1.position = "absolute";
+		legend1.top = -10;
+		legend1.right = 5;
+		legend1.borderAlpha = 0;
+		legend1.valueWidth = 0.2;
+		legend1.horizontalGap = 0;
+		legend1.width = 90;
+		legend1.valueText = "";
+
+		pie1.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b>人次 ([[percents]]%)</span>";
+
+		pie1.addLegend(legend1);
+
+		pie1.write("in_pay_div");
+	}
+	
+	
+	//近一周挂号趋势
+	function registerTrend() {
+		var mouthCompData = [ {
+			"chartKey" : "09-09",
+			"chartValue" : 1125,
+			//"quit" : 63
+		}, {
+			"chartKey" : "09-10",
+			"chartValue" : 1058,
+			//"quit" : 44
+		}, {
+			"chartKey" : "09-11",
+			"chartValue" : 905,
+			//"quit" : 61
+		}, {
+			"chartKey" : "09-12",
+			"chartValue" : 692,
+			//"quit" : 55
+		}, {
+			"chartKey" : "09-13",
+			"chartValue" : 947,
+			//"quit" : 78
+		}, {
+			"chartKey" : "09-14",
+			"chartValue" : 728,
+			//"quit" : 26
+		}, {
+			"chartKey" : "09-15",
+			"chartValue" : 996,
+			//"quit" : 39
+		}];
+		// SERIAL CHART
+		var mouthCompColumn = new AmCharts.AmSerialChart();
+		mouthCompColumn.dataProvider = mouthCompData;
+		mouthCompColumn.categoryField = "chartKey";
+		mouthCompColumn.autoMargins = false;
+		mouthCompColumn.marginLeft = 5;
+		mouthCompColumn.marginRight = 5;
+		mouthCompColumn.marginTop = 0;
+		mouthCompColumn.marginBottom = 35;
+	 
+
+		// AXES
+		// category axis
+		var categoryAxis = mouthCompColumn.categoryAxis;
+		//categoryAxis.autoGridCount = false;
+		//categoryAxis.labelsEnabled = false;
+		categoryAxis.gridCount = 0;
+		categoryAxis.gridAlpha = 0;
+		categoryAxis.gridColor = "#999";
+		categoryAxis.axisColor = "#999";
+		categoryAxis.labelRotation = 45;
+
+		// Duration value axis
+		var otheryearAxis = new AmCharts.ValueAxis();
+		otheryearAxis.gridAlpha = 0.05;
+		otheryearAxis.axisAlpha = 0;
+		otheryearAxis.labelsEnabled = false;
+		//otheryearAxis.inside = true;
+
+		mouthCompColumn.addValueAxis(otheryearAxis);
+
+		// GRAPHS
+		// otheryear graph
+		var otheryearGraph = new AmCharts.AmGraph();
+		//var quitGraph = new AmCharts.AmGraph();
+
+		otheryearGraph.title = "挂号人次";
+		otheryearGraph.valueField = "chartValue";
+		otheryearGraph.type = "column";
+		otheryearGraph.lineAlpha = 0;
+		otheryearGraph.fillAlphas = 0.8;
+		otheryearGraph.fillColors = "#40BAF4";
+		otheryearGraph.valueAxis = otheryearAxis;
+		otheryearGraph.balloonText = "挂号：[[value]]人次";
+		otheryearGraph.lineThickness = 1;
+		otheryearGraph.legendValueText = "[[value]]";
+		mouthCompColumn.addGraph(otheryearGraph);
+/*
+		quitGraph.title = "退号人次";
+		quitGraph.valueField = "quit";
+		quitGraph.type = "line";
+		quitGraph.lineAlpha = 1;
+		quitGraph.fillAlphas = 0;
+		quitGraph.lineColor = "#F90";
+		quitGraph.bullet = "round";
+		quitGraph.bulletBorderColor = "#F90";
+		quitGraph.bulletBorderAlpha = 1;
+		quitGraph.bulletBorderThickness = 1;
+		quitGraph.valueAxis = otheryearAxis;
+		quitGraph.balloonText = "退号：[[value]]人次";
+		quitGraph.lineThickness = 1;
+		quitGraph.legendValueText = "[[value]]";
+		mouthCompColumn.addGraph(quitGraph);
+*/
+		// CURSOR
+		var chartCursor = new AmCharts.ChartCursor();
+		chartCursor.zoomable = false;
+		chartCursor.cursorAlpha = 0;
+		chartCursor.valueLineEnabled = true;
+		chartCursor.valueLineBalloonEnabled = true;
+		mouthCompColumn.addChartCursor(chartCursor);
+
+		var legend1 = new AmCharts.AmLegend();
+		legend1.bulletType = "round";
+		legend1.equalWidths = true;
+		legend1.valueWidth = 55;
+		legend1.color = "#000000";
+		legend1.position = "top";
+		legend1.useGraphSettings = true;
+		mouthCompColumn.addLegend(legend1);
+
+
+
+		// WRITE
+		mouthCompColumn.write("register_div");
+	}
+	//就诊有效率、就诊状态
+	function cureEfficiency() {
+		var curEfficiencyData = [ {
+			"chartKey" : "未看诊",
+			"chartValue" : 1082,
+			"chartColor" : "#FF0F00"
+		}, {
+			"chartKey" : "已看诊",
+			"chartValue" : 11535,
+			"chartColor" : "#B7DF1E"
+		} ];
+
+		// PIE CHART
+		var pie1 = new AmCharts.AmPieChart();
+		pie1.dataProvider = curEfficiencyData;
+		pie1.titleField = "chartKey";
+		pie1.valueField = "chartValue";
+		pie1.colorField = "chartColor";
+		pie1.sequencedAnimation = true;
+		pie1.startEffect = "elastic";
+		pie1.innerRadius = "40%";
+		pie1.startDuration = 2;
+		pie1.labelRadius = 1;
+		pie1.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> 人次 ([[percents]]%)</span>";
+		pie1.labelText = "";
+		pie1.startDuration = 2;
+		pie1.radius = 85;
+		pie1.labelRadius = 15;
+		pie1.pieX = "40%";
+		//pie1.addTitle("收入构成-全院");
+		// LEGEND
+		legend1 = new AmCharts.AmLegend();
+	
+		legend1.align = "right";
+		//legend1.color = "#FFF";
+		legend1.position = "absolute";
+		legend1.top = 0;
+		legend1.right = 20;
+		legend1.borderAlpha = 0;
+		legend1.valueWidth = 0.2;
+		legend1.horizontalGap = 0;
+		legend1.width = 60;
+		legend1.valueText = "";
+	
+		pie1.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> 人次 ([[percents]]%)</span>";
+		pie1.addLegend(legend1);
+
+		pie1.write("cureEfficiencyPiediv");
+	}
+	
+	//近一周在院人数趋势
+	//近一周出入院人数趋势
+	function inOutHosTrend() {
+		var mouthCompData = [{
+			"chartKey" : "09-09",
+			//"allValue" : 766,
+			"outValue" : 73,
+			"inValue" : 158
+		}, {
+			"chartKey" : "09-10",
+			//"allValue" : 721,
+			"outValue" : 86,
+			"inValue" : 142
+		}, {
+			"chartKey" : "09-11",
+			//"allValue" : 745,
+			"outValue" : 91,
+			"inValue" : 136
+		}, {
+			"chartKey" : "09-12",
+			//"allValue" : 798,
+			"outValue" : 95,
+			"inValue" : 97
+		}, {
+			"chartKey" : "09-13",
+			//"allValue" : 821,
+			"outValue" : 77,
+			"inValue" : 96
+		}, {
+			"chartKey" : "09-14",
+			//"allValue" : 796,
+			"outValue" : 107,
+			"inValue" : 104
+		}, {
+			"chartKey" : "09-15",
+			//"allValue" : 776,
+			"outValue" : 121,
+			"inValue" : 129
+		} ];
+		// SERIAL CHART
+		var mouthCompColumn = new AmCharts.AmSerialChart();
+		mouthCompColumn.dataProvider = mouthCompData;
+		mouthCompColumn.categoryField = "chartKey";
+		mouthCompColumn.autoMargins = false;
+		mouthCompColumn.marginLeft = 5;
+		mouthCompColumn.marginRight = 5;
+		mouthCompColumn.marginTop = 0;
+		mouthCompColumn.marginBottom = 35;
+		
+		// AXES
+		// category axis
+		var categoryAxis = mouthCompColumn.categoryAxis;
+		//categoryAxis.autoGridCount = false;
+		//categoryAxis.labelsEnabled = false;
+		categoryAxis.gridCount = 0;
+		categoryAxis.gridAlpha = 0;
+		categoryAxis.gridColor = "#999";
+		categoryAxis.axisColor = "#999";
+		categoryAxis.labelRotation = 45;
+
+		// Duration value axis
+		var otheryearAxis = new AmCharts.ValueAxis();
+		otheryearAxis.gridAlpha = 0.05;
+		otheryearAxis.axisAlpha = 0;
+		otheryearAxis.labelsEnabled = false;
+		//otheryearAxis.inside = true;
+
+		mouthCompColumn.addValueAxis(otheryearAxis);
+
+		// GRAPHS
+		// otheryear graph
+		//var otheryearGraph = new AmCharts.AmGraph();
+		var otheryearGraph1 = new AmCharts.AmGraph();
+		var otheryearGraph2 = new AmCharts.AmGraph();
+/*
+		otheryearGraph.valueField = "allValue";
+		otheryearGraph.title = "在院";
+		otheryearGraph.type = "column";
+		otheryearGraph.lineAlpha = 0;
+		otheryearGraph.fillAlphas = 0.8;
+		otheryearGraph.fillColors = "#999";
+		otheryearGraph.valueAxis = otheryearAxis;
+		otheryearGraph.balloonText = "在院：[[value]]人";
+		otheryearGraph.legendValueText = "[[value]]人";
+		mouthCompColumn.addGraph(otheryearGraph);
+*/		
+		
+		otheryearGraph1.valueField = "inValue";
+		otheryearGraph1.title = "入院";
+		otheryearGraph1.type = "line";
+		otheryearGraph1.valueAxis = otheryearAxis;
+		otheryearGraph1.lineColor = "#78D542";
+		otheryearGraph1.balloonText = "入院：[[value]]人次";
+		otheryearGraph1.lineThickness = 1;
+		otheryearGraph1.legendValueText = "[[value]]人次";
+		otheryearGraph1.bullet = "round";
+		otheryearGraph1.bulletBorderColor = "#40BAF4";
+		otheryearGraph1.bulletBorderAlpha = 1;
+		otheryearGraph1.bulletBorderThickness = 1;
+		mouthCompColumn.addGraph(otheryearGraph1);
+
+		otheryearGraph2.valueField = "outValue";
+		otheryearGraph2.title = "出院";
+		otheryearGraph2.type = "line";
+		otheryearGraph2.valueAxis = otheryearAxis;
+		otheryearGraph2.lineColor = "#40BAF4";
+		otheryearGraph2.balloonText = "出院：[[value]]人次";
+		otheryearGraph2.lineThickness = 1;
+		otheryearGraph2.legendValueText = "[[value]]人次";
+		otheryearGraph2.bullet = "round";
+		otheryearGraph2.bulletBorderColor = "#78D542";
+		otheryearGraph2.bulletBorderAlpha = 1;
+		otheryearGraph2.bulletBorderThickness = 1;
+		mouthCompColumn.addGraph(otheryearGraph2);
+
+
+		var legend1 = new AmCharts.AmLegend();
+		legend1.bulletType = "round";
+		legend1.equalWidths = true;
+		legend1.valueWidth = 55;
+		legend1.color = "#000000";
+		legend1.position = "top";
+		legend1.useGraphSettings = true;
+		mouthCompColumn.addLegend(legend1);
+
+		// CURSOR
+		var chartCursor = new AmCharts.ChartCursor();
+		chartCursor.zoomable = false;
+		chartCursor.cursorAlpha = 0;
+		chartCursor.valueLineEnabled = true;
+		chartCursor.valueLineBalloonEnabled = true;
+		mouthCompColumn.addChartCursor(chartCursor);
+
+		// WRITE
+		mouthCompColumn.write("in_out_hos_trend_div");
+	}
+</script></script>

@@ -1,0 +1,57 @@
+/*module*/
+.module{
+    overflow: hidden;
+}
+.module,.module .content{
+    width: 100%;
+    
+}
+.module .content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    padding-bottom: 23px;
+		margin-top :3.5em;
+}
+.module .panel{
+    width: 100%; position: relative;
+    float: left;
+    overflow:scroll;
+}
+
+/*head*/
+.head{
+    height: 38px;
+    background-color:black;
+    -webkit-background-size:320px 62px;
+    -moz-background-size:320px 62px;
+    -o-background-size:320px 62px;
+    background-size:320px 62px;
+    background-position: left -31px;
+		position:fixed;
+		left:0;
+		top:60px;
+		width: 100%;
+		z-index: 999;
+}
+.head h2{
+    font-size: .6em;
+		font-weight: normal;
+    display: inline-block; text-align: center;
+    float: left; 
+    height: 38px;
+		line-height: 38px;
+    background-color:#FFF;
+    color: #333;
+		border: none;
+		padding: 0;
+		border-bottom: 2px solid #DDD;
+}
+.head .current {
+	height: 38px;
+	border-bottom: 2px solid #4DA6FF;
+	position:absolute;
+}
+
+.content{
+	padding-bottom: 59px ;
+}

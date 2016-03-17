@@ -1,0 +1,149 @@
+          <div class="col-md-12">
+            <!-- BEGIN PORTLET-->
+            <div class="portlet solid bordered light-grey">
+              <div class="portlet-title">
+                <div class="caption"><i class="icon-bar-chart icon-large"></i>数据监控趋势</div>
+              </div>
+              <div class="portlet-body">
+                <div id="income_trend_div" class="chart" style="height:305px;"></div>
+              </div>
+            </div>
+          </div>
+<script>
+$(function(){	
+	incomeTrend();
+	});
+function incomeTrend(){
+	var mouthCompData = [{
+		"chartKey" : "07-23",
+		"allValue" : 68.5,
+		"outValue" : 27.5,
+		"inValue" : 41
+	}, {
+		"chartKey" : "07-24",
+		"allValue" : 88.5,
+		"outValue" : 37.5,
+		"inValue" : 51
+	}, {
+		"chartKey" : "07-25",
+		"allValue" : 98.5,
+		"outValue" : 47.5,
+		"inValue" : 51
+	}, {
+		"chartKey" : "07-26",
+		"allValue" : 77.5,
+		"outValue" : 31.5,
+		"inValue" : 46
+	}, {
+		"chartKey" : "07-27",
+		"allValue" : 68.5,
+		"outValue" : 27.5,
+		"inValue" : 41
+	}, {
+		"chartKey" : "07-28",
+		"allValue" : 88.5,
+		"outValue" : 27.5,
+		"inValue" : 61
+	}, {
+		"chartKey" : "07-29",
+		"allValue" : 68.5,
+		"outValue" : 37.5,
+		"inValue" : 31
+	} ];
+	// SERIAL CHART
+	var mouthCompColumn = new AmCharts.AmSerialChart();
+	mouthCompColumn.dataProvider = mouthCompData;
+	mouthCompColumn.categoryField = "chartKey";
+  
+	mouthCompColumn.autoMargins = false;
+	mouthCompColumn.marginLeft = 5;
+	mouthCompColumn.marginRight = 5;
+	mouthCompColumn.marginTop = 0;
+	mouthCompColumn.marginBottom = 50;
+	 
+	// AXES
+	// category axis
+	var categoryAxis = mouthCompColumn.categoryAxis;
+	categoryAxis.autoGridCount = false;
+	categoryAxis.labelRotation = 90;
+	categoryAxis.gridCount = 50;
+	categoryAxis.gridAlpha = 0;
+	categoryAxis.gridColor = "#000000";
+	categoryAxis.axisColor = "#555555";
+		
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = 0;
+	valueAxis.axisAlpha = 0;
+	mouthCompColumn.addValueAxis(valueAxis);
+
+	//otheryearAxis.inside = true;
+
+	//mouthCompColumn.addValueAxis(otheryearAxis);
+
+	// GRAPHS
+	// otheryear graph
+	var allGraph = new AmCharts.AmGraph();
+	allGraph.title = "全院";
+	allGraph.valueField = "allValue";
+	allGraph.type = "column";
+	//allGraph.valueAxis = otheryearAxis;
+	allGraph.legendValueText = "[[value]]";
+	allGraph.balloonText = "全院: <b>[[value]]</b>";
+	allGraph.type = "column";
+	allGraph.lineAlpha = 0;
+	allGraph.fillAlphas = 0.8;
+	allGraph.fillColors = "#CCC"; 
+	
+	mouthCompColumn.addGraph(allGraph);
+
+	var outGraph = new AmCharts.AmGraph();
+	outGraph.title = "门诊";
+	outGraph.valueField = "outValue";
+	outGraph.type = "line";
+	//outGraph.valueAxis = otheryearAxis;
+	outGraph.lineColor = "#40BAF4";
+	outGraph.balloonText = "门诊：[[value]]";
+	outGraph.lineThickness = 1;
+	outGraph.legendValueText = "[[value]]";
+	outGraph.bullet = "round";
+	outGraph.bulletBorderColor = "#40BAF4";
+	outGraph.bulletBorderAlpha = 1;
+	outGraph.bulletBorderThickness = 1;
+	mouthCompColumn.addGraph(outGraph);
+
+	var inGraph = new AmCharts.AmGraph();
+	inGraph.title = "住院";
+	inGraph.valueField = "inValue";
+	inGraph.type = "line";
+	//inGraph.valueAxis = otheryearAxis;
+	inGraph.lineColor = "#78D542";
+	inGraph.balloonText = "住院：[[value]]";
+	inGraph.lineThickness = 1;
+	inGraph.legendValueText = "[[value]]";
+	inGraph.bullet = "round";
+	inGraph.bulletBorderColor = "#78D542";
+	inGraph.bulletBorderAlpha = 1;
+	inGraph.bulletBorderThickness = 1;
+	mouthCompColumn.addGraph(inGraph);
+
+	// CURSOR
+	var chartCursor = new AmCharts.ChartCursor();
+	chartCursor.zoomable = false;
+	chartCursor.cursorAlpha = 0;
+	chartCursor.valueLineEnabled = true;
+	chartCursor.valueLineBalloonEnabled = true;
+	mouthCompColumn.addChartCursor(chartCursor);
+
+	var legend1 = new AmCharts.AmLegend();
+	legend1.bulletType = "round";
+	legend1.equalWidths = true;
+	legend1.valueWidth = 40;
+	legend1.color = "#000000";
+	legend1.position = "top";
+	legend1.useGraphSettings = true;
+	mouthCompColumn.addLegend(legend1);
+
+	// WRITE
+	mouthCompColumn.write("income_trend_div");
+}
+</script>      

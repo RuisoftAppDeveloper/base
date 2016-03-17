@@ -1,0 +1,1423 @@
+<div class="module" id="nav">
+  <div class="head">
+    <div id="trans" class="current" style="width:25%;"></div>
+    <h2 data-tab="income" style="width:25%;">全院收入</h2>
+    <h2 data-tab="equipment" style="width:25%;">收入排名</h2>
+    <h2 data-tab="equipment" style="width:25%;">大型设备</h2>
+    <h2 data-tab="expenses" style="width:25%;">人均费用</h2>
+  </div>
+  <div class="row" id="update-date-with-topnav">
+  	<span class="pull-right"><i class="fa fa-calendar"></i> 当月：09-01 ~ 09-15</span>
+    <i class="fa fa-calendar"></i> 当日：2015-09-15
+  </div>
+  <div class="content" style="margin-top:3em;">
+    <div class="panel" style="margin-bottom:3em;">
+        <div class="row">	
+        	<div class="col-md-6 col-sm-6 col-xs-12">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>名称</th>
+                  <th class="text-right">金额(万元)</th>
+                  <th class="text-center order_num">环比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>当月全院收入</th>
+                  <td class="text-right">1291.34</td>
+                  <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                </tr>
+                <tr>
+                  <th>当月门诊收入</th>
+                  <td class="text-right">250.35</td>
+                  <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                </tr>
+                <tr>
+                  <th>当月住院收入</th>
+                  <td class="text-right">1040.99</td>
+                  <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          
+          </div>
+        
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <!-- BEGIN PORTLET-->
+            <div class="portlet solid bordered light-grey" style="padding-bottom:0;">
+              <div class="portlet-title">
+                <div class="caption"><i class="fa fa-line-chart"></i>近 1 周收入趋势(单位:万元)</div>
+                <!--<div class="date-range"><i class="fa fa-calendar"></i> 07-23 ~ 07-29</div>-->
+              </div>
+              <div class="portlet-body">
+                <div id="income_trend_div" class="chart" style="height:220px;"></div>
+              </div>
+            </div>
+            <!-- END PORTLET-->
+          </div>
+        
+        	<div class="col-md-6 col-sm-6 col-xs-12">
+          	<!-- BEGIN PORTLET-->
+            <div class="portlet box yellow">
+              <div class="portlet-title">
+                <div class="caption"><i class="icon-dashboard icon-large"></i>当月收入构成</div>
+                <!--<div class="date-range"><i class="fa fa-calendar"></i> 07-01 ~ 07-29</div>-->
+              </div>
+              <div class="portlet-body">
+                <div id="income_construct_div" class="chart" style="height:220px;"></div>
+              </div>
+            </div>
+            <!-- END PORTLET-->
+          </div>
+        	
+        </div>
+         
+      </div>
+      <!-- 新闻/E -->
+      <!-- 社会/S -->
+      <div class="panel" style="margin-bottom:3em;">
+      <div class="row">	
+      	<div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="portlet box blue tabbable">
+          <div class="portlet-title">
+            <div class="caption">
+              <i class="icon-money icon-large"></i>当月排名
+            </div>
+          </div>
+          
+          <div class="portlet-body">
+            <div class=" portlet-tabs">
+              <ul class="nav nav-tabs">
+                <li><a href="#tab_1_4" id="out-doc" data-toggle="tab">医生(住)</a></li>
+                <li><a href="#tab_1_3" id="in-doc" data-toggle="tab">医生(门)</a></li>
+                <li><a href="#tab_1_2" id="out-ke" data-toggle="tab">科室(住)</a></li>
+                <li class="active"><a href="#tab_1_1" id="in-ke" data-toggle="tab">科室(门)</a></li>
+              </ul>
+            
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_1_1">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th class="order_num">排名</th>
+                            <th>科室</th>
+                            <th class="text-right">金额(万元)</th>
+                            <th class="text-center order_num">环比</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">1</td>
+                            <th>妇产科门诊</th>
+                            <td class="text-right">41.08</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">2</td>
+                            <th>消化科门诊</th>
+                            <td class="text-right">25.11</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">3</td>
+                            <th>肾内科门诊</th>
+                            <td class="text-right">24.66</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">4</td>
+                            <th>儿科门诊</th>
+                            <td class="text-right">17.71</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">5</td>
+                            <th>神经内门诊</th>
+                            <td class="text-right">16.06</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">6</td>
+                            <th>呼吸科门诊</th>
+                            <td class="text-right">14.38</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">7</td>
+                            <th>急诊科</th>
+                            <td class="text-right">13.44</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">8</td>
+                            <th>骨科门诊</th>
+                            <td class="text-right">11.94</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">9</td>
+                            <th>感染科门诊</th>
+                            <td class="text-right">9.76</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">10</td>
+                            <th>内分泌科门诊</th>
+                            <td class="text-right">9.69</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>             
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>          
+                </div>
+                <div class="tab-pane" id="tab_1_2">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th class="order_num">排名</th>
+                            <th>科室</th>
+                            <th class="text-right">金额(万元)</th>
+                            <th class="text-center order_num">环比</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+                          <tr>
+                            <td class="text-center">1</td>
+                            <th>手术室</th>
+                            <td class="text-right">89.74</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">2</td>
+                            <th>肿瘤血液科一</th>
+                            <td class="text-right">59.74</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">3</td>
+                            <th>肿瘤血液科二</th>
+                            <td class="text-right">57.18</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">4</td>
+                            <th>神经外科</th>
+                            <td class="text-right">53.95</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">5</td>
+                            <th>神经内科一</th>
+                            <td class="text-right">48.99</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">6</td>
+                            <th>心内科一</th>
+                            <td class="text-right">45.84</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">7</td>
+                            <th>妇产科二</th>
+                            <td class="text-right">44.07</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">8</td>
+                            <th>消化内科</th>
+                            <td class="text-right">42.10</td>
+                            <td class="text-center"> <i class="fa fa-arrow-down arrow-green"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">9</td>
+                            <th>骨科三</th>
+                            <td class="text-right">40.98</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">10</td>
+                            <th>神经内科二</th>
+                            <td class="text-right">37.93</td>
+                            <td class="text-center"> <i class="fa fa-arrow-up arrow-red"></i> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab_1_3">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th class="order_num">排名</th>
+                            <th>医生</th>
+                            <th class="text-right">金额(万元)</th>
+                            <th class="text-right">药品比</th>
+                            <th class="text-center order_num">趋势</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">1</td>
+                            <th>徐正元</th>
+                            <td class="text-right">14.81</td>
+                            <td class="text-right">40.6%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">2</td>
+                            <th>陈汝英</th>
+                            <td class="text-right">14.35</td>
+                            <td class="text-right">41.5%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">3</td>
+                            <th>叶隆昌</th>
+                            <td class="text-right">10.81</td>
+                            <td class="text-right">38.9%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">4</td>
+                            <th>吴群</th>
+                            <td class="text-right">9.16</td>
+                            <td class="text-right">33.5%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">5</td>
+                            <th>韩洪波</th>
+                            <td class="text-right">8.85</td>
+                            <td class="text-right">42.8%</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">6</td>
+                            <th>招玉龙</th>
+                            <td class="text-right">8.10</td>
+                            <td class="text-right">37.1%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">7</td>
+                            <th>王满响</th>
+                            <td class="text-right">7.37</td>
+                            <td class="text-right">48.5%</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">8</td>
+                            <th>胡芬芳</th>
+                            <td class="text-right">7.05</td>
+                            <td class="text-right">35.2%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">9</td>
+                            <th>卢良花</th>
+                            <td class="text-right">6.59</td>
+                            <td class="text-right">31.3%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">10</td>
+                            <th>乔丽平</th>
+                            <td class="text-right">5.30</td>
+                            <td class="text-right">28.5%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab_1_4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th class="order_num">排名</th>
+                            <th>医生</th>
+                            <th class="text-right">金额(万元)</th>
+                            <th class="text-right">药品比</th>
+                            <th class="text-center order_num">趋势</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">1</td>
+                            <th>王建国</th>
+                            <td class="text-right">22.49</td>
+                            <td class="text-right">42.3%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">2</td>
+                            <th>徐宜全</th>
+                            <td class="text-right">21.49</td>
+                            <td class="text-right">41.0%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">3</td>
+                            <th>王加斌</th>
+                            <td class="text-right">19.20</td>
+                            <td class="text-right">39.8%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">4</td>
+                            <th>姚型锋</th>
+                            <td class="text-right">17.32</td>
+                            <td class="text-right">44.7%</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">5</td>
+                            <th>汪涛</th>
+                            <td class="text-right">15.96</td>
+                             <td class="text-right">45.3%</td>
+                             <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>  
+                          <tr>
+                            <td class="text-center">6</td>
+                            <th>叶志虎</th>
+                            <td class="text-right">15.28</td>
+                            <td class="text-right">36.5%</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">7</td>
+                            <th>陈绍曾</th>
+                            <td class="text-right">15.23</td>
+                            <td class="text-right">37.9%</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">8</td>
+                            <th>赵丹玲</th>
+                            <td class="text-right">14.09</td>
+                            <td class="text-right">47.6%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">9</td>
+                            <th>孙立柱</th>
+                            <td class="text-right">13.19</td>
+                            <td class="text-right">42.6%</td>
+                            <td class="text-center"><i class="fa fa-arrow-down arrow-green"></i></td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">10</td>
+                            <th>李强</th>
+                            <td class="text-right">13.06</td>
+                            <td class="text-right">39.5%</td>
+                            <td class="text-center"><i class="fa fa-arrow-up arrow-red"></i></td>
+                          </tr>                 
+                        </tbody>
+                      </table>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+        </div>
+        </div>
+        </div>
+      </div>
+      <!-- 新闻/E -->
+      <!-- 社会/S -->
+      <div class="panel" style="margin-bottom:3em;">
+      	<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="dashboard-stat blue">
+              <div class="visual">
+                <i class="icon-medkit icon-4x"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-right:28px;">
+                  275.90
+                </div>
+                <span style="position:absolute;right:.5em;top:2.5em;color:#FFF;">万元</span>
+                <div class="desc">                           
+                  同比 <i class="fa fa-arrow-up text-red"></i></td>
+                  环比 <i class="fa fa-arrow-down text-green"></i></td>
+                </div>
+              </div>
+              <a href="#" class="more">
+              当月大型设备收入
+              </a>                 
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="dashboard-stat purple">
+              <div class="visual">
+                <i class=" icon-h-sign icon-4x"></i>
+              </div>
+              <div class="details">
+                <div class="number" style="padding-right:28px;">
+                  15.99
+                </div>
+                <span style="position:absolute;right:.5em;top:2.5em;color:#FFF;">万元</span>
+                <div class="desc">                           
+                  同比 <i class="fa fa-arrow-up text-red"></i></td>
+                  环比 <i class="fa fa-arrow-down text-green"></i></td>
+                </div>
+              </div>
+              <a href="#" class="more">
+                当月大型设备退费
+              </a>
+            </div>
+					</div>
+        </div>
+     	
+				<div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          	<h2 class="bg_green">当月大型设备收入排名</h2>
+            <!-- BEGIN PORTLET-->
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>项目名称</th>
+                  <th class="text-right">单价(元)</th>
+                  <th class="text-right">数量</th>
+                  <th class="text-right">金额(万元)</th>
+                  <th class="text-center order_num">趋势</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<tr>
+                  <th colspan="5" style="background:#F5F5F5;">生化全套</th>
+                </tr>
+                <tr>
+                  <td class="text-right" colspan="2">295.00</td>
+                  <td class="text-right">1131</td>
+                  <td class="text-right">33.36</td>
+                  <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                </tr>
+              	<tr>
+                  <th colspan="5" style="background:#F5F5F5;">胸部成像CT平扫</th>
+                </tr>
+                <tr>
+                  <td class="text-right" colspan="2">447.00</td>
+                  <td class="text-right">470</td>
+                  <td class="text-right">21.01</td>
+                  <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                </tr>
+              	<tr>
+                  <th colspan="5" style="background:#F5F5F5;">颅脑CT平扫</th>
+                </tr>
+                <tr>
+                  <td class="text-right" colspan="2">327.00</td>
+                  <td class="text-right">625</td>
+                  <td class="text-right">20.44</td>
+                  <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                </tr>
+              	<tr>
+                  <th colspan="5" style="background:#F5F5F5;">生化全套(干式)</th>
+                </tr>
+                <tr>
+                  <td class="text-right" colspan="2">360.00</td>
+                  <td class="text-right">278</td>
+                  <td class="text-right">10.01</td>
+                  <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                </tr>
+              	<tr>
+                  <th colspan="5" style="background:#F5F5F5;">MRI头颅平扫</th>
+                </tr>
+                <tr>
+                  <td class="text-right" colspan="2">410.00</td>
+                  <td class="text-right">241</td>
+                  <td class="text-right">9.88</td>
+                  <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <!-- BEGIN PORTLET-->
+            <div class="portlet solid bordered light-grey" style="padding-bottom:0;">
+              <div class="portlet-body">
+                <div id="large_order_div" style="height:300px;"></div>
+              </div>
+            </div>
+            <!-- END PORTLET-->
+          </div>
+
+        </div>
+      
+      </div>
+      <!-- 新闻/E -->
+      <!-- 社会/S -->
+      <div class="panel" style="margin-bottom:3em;">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="portlet box yellow">
+              <div class="portlet-title">
+                <div class="caption">
+                  <i class="icon-bar-chart icon-large"></i>当月人均费用
+                </div>
+              </div>
+              <div class="portlet-body">
+                <table class="table tablefont table-hover" style="margin-bottom:0">
+                  <thead>
+                    <tr>
+                      <th>名称</th>
+                      <th class="text-right">人数</th>
+                      <th class="text-right">人均费用(元)</th>
+                      <th class="text-center order_num">环比</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>门诊</th>
+                      <td class="text-right">10917</td>
+                      <td class="text-right">229.32</td>
+                      <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                    </tr>
+                    <tr>
+                      <th>住院</th>
+                      <td class="text-right">1376</td>
+                      <td class="text-right">7251.05</td>
+                      <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!--BEGIN TABS-->
+            <div class="tabbable tabbable-custom">
+              <ul class="nav nav-tabs">
+                <li class="active"><a id="in-in" href="#tab_2_1" data-toggle="tab"><i class="fa fa-heart"></i> 门诊</a></li>
+                <li><a href="#tab_2_2" id="in-fee" data-toggle="tab"><i class="fa fa-heart-o"></i> 住院</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab_2_1">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                      	<th class="text-center order_num">#</th>
+                        <th>科室</th>
+                        <th class="text-right">人均费用(元)</th>
+                        <th class="text-center order_num">环比</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      	<th class="text-center">1</th>
+                        <th>肾内科门诊</th>
+                        <td class="text-right">602.91</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                      <tr>
+                      	<th class="text-center">2</th>
+                        <th>放疗科门诊</th>
+                        <td class="text-right">431.18</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                      <tr>
+                      	<th class="text-center">3</th>
+                        <th>康复科门诊</th>
+                        <td class="text-right">409.58</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                      <tr>
+                      	<th class="text-center">4</th>
+                        <th>消化科门诊</th>
+                        <td class="text-right">354.60</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                      <tr>
+	                      <th class="text-center">5</th>
+                        <th>康复科门诊</th>
+                        <td class="text-right">415.8</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- BEGIN PORTLET-->
+                  <div class="portlet solid bordered light-grey" style="padding-bottom:0;">
+                    <div class="portlet-title">
+                      <div class="caption"><i class="fa fa-line-chart"></i>当月门诊科室人均费用排名</div>
+                    </div>
+                    <div class="portlet-body">
+                      <div id="clinic_fee_div" style="height:180px;"></div>
+                    </div>
+                  </div>
+                  <!-- END PORTLET-->
+                  
+                </div>
+                <div class="tab-pane" id="tab_2_2">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                      	<th class="text-center order_num">#</th>
+                        <th>科室</th>
+                        <th class="text-right">人均费用(元)</th>
+                        <th class="text-center order_num">环比</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      	<th class="text-center">1</th>
+                        <th>ICU</th>
+                        <td class="text-right">10680.28</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                      <tr>
+                      	<th class="text-center">2</th>
+                        <th>肿瘤血液科一</th>
+                        <td class="text-right">10466.48</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                      <tr>
+                      	<th class="text-center">3</th>
+                        <th>介入中心</th>
+                        <td class="text-right">9522.81</td>
+                        <td class="text-center"><i class="fa fa-arrow-down text-green"></i></td>
+                      </tr>
+                      <tr>
+                      	<th class="text-center">4</th>
+                        <th>肿瘤血液科二</th>
+                        <td class="text-right">8637.44</td>
+                        <td class="text-center"><i class="fa fa-arrow-down text-green"></i></td>
+                      </tr>
+                      <tr>
+                      	<th class="text-center">5</th>
+                        <th>神经外科</th>
+                        <td class="text-right">8553.37</td>
+                        <td class="text-center"><i class="fa fa-arrow-up text-red"></i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                   <!-- BEGIN PORTLET-->
+                  <div class="portlet solid bordered light-grey" style="padding-bottom:0;">
+                    <div class="portlet-title">
+                      <div class="caption"><i class="fa fa-line-chart"></i>当月住院科室人均费用排名</div>
+                    </div>
+                    <div class="portlet-body">
+                      <div id="in_fee_div" style="height:180px;"></div>
+                    </div>
+                  </div>
+                  <!-- END PORTLET-->
+                </div>
+              </div>
+            </div>
+            <!--END TABS-->
+          </div>
+        </div>
+      
+      </div>
+        
+  </div>
+</div>
+<script>
+   var currentIndex = 0;
+  var navTab = new Slide({
+		//autoPlay: true,
+		targetSelector: '#nav',
+		targetdom: 'nav',
+		wrapSelector: '.content',
+		indicatorSelector: '#nav .head > h2',
+		indicatorCls: '',
+		transSelector:'#trans',
+		slideFunction:slideCallback
+	});
+	$("#nav .head > h2").click(function() {
+		navTab.to($(this).index()-1);
+	})
+	function slideCallback(index){
+		if(index==0){
+			firstLoad();
+		}
+		else if(index == 1){
+			secondLoad();
+		}
+		else if(index == 2){
+			thirdLoad();
+		}
+		else if(index == 3){
+			fourthLoad();
+		}
+		currentIndex = index;
+	}
+	
+	$(function(){	
+		firstLoad();
+		$("#page-refresh").unbind();
+		$("#page-refresh").click(function(e){
+			$("#page-refresh").css("color","#999");
+			navTab.to(currentIndex);
+			$("#page-refresh").css("color","#FFF");
+		});
+		$("#update-date-with-topnav").width($(".row:eq(1)").width()-20);
+	});
+	
+	function firstLoad(){
+		incomeTrend();
+		incomePie();
+		$("#in-fee").click(function(){
+			window.setTimeout("inFee()",100);//住院人均费用排名
+		});
+		$("#in-in").click(function(){
+			window.setTimeout("clinicFee()",100);//住院人均费用排名
+		});
+		$("#doc-list").click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+			$("#outpatientDocdiv").show();
+			$("#inpatientDeptdiv").hide();
+			window.setTimeout("outpatientDoc()",100);//医生收入排名
+		});
+		$("#clinic-list").click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+			$("#outpatientDocdiv").hide();
+			$("#inpatientDeptdiv").show();
+		});
+		
+		$("#nav-list li",window.parent.document).click(function(){
+			var li_seq = $(this).index();
+			if(li_seq == 0) {
+				$.mobile.changePage("#index");
+			}
+			else if(li_seq == 1) {
+				$.mobile.changePage("#class-page",{transition:"slide"});
+				allFeeChart();
+				diffAngle();
+				drugRatioPie();
+				emergencyFeePie();
+				clinicFeeStat();
+			}
+		});
+	}
+	
+	function secondLoad(){
+		setTimeout(inpatientDept(),1000);
+		setTimeout(outpatientDoc(),1000);//医生收入排名
+	}
+	
+	function thirdLoad(){
+		setTimeout(largeOrder(),1000);
+	}
+
+	function fourthLoad(){
+		clinicFee();
+	}
+
+//收入趋势
+function incomeTrend(){
+	var mouthCompData = [{
+		"chartKey" : "09-09",
+		"inValue" : 70.29,
+		"outValue" : 23.63,
+		"allValue" : 93.92
+	}, {
+		"chartKey" : "09-10",
+		"inValue" : 72.28,
+		"outValue" : 21.52,
+		"allValue" : 93.80
+	}, {
+		"chartKey" : "09-11",
+		"inValue" : 69.27,
+		"outValue" : 20.19,
+		"allValue" : 89.46
+	}, {
+		"chartKey" : "09-12",
+		"inValue" : 77.62,
+		"outValue" : 14.62,
+		"allValue" : 92.24
+	}, {
+		"chartKey" : "09-13",
+		"inValue" : 62.87,
+		"outValue" : 16.63,
+		"allValue" : 79.51
+	}, {
+		"chartKey" : "09-14",
+		"inValue" : 70.83,
+		"outValue" : 11.52,
+		"allValue" : 82.35
+	}, {
+		"chartKey" : "09-15",
+		"inValue" : 84.72,
+		"outValue" : 21.03,
+		"allValue" : 105.75
+	} ];
+	// SERIAL CHART
+	var mouthCompColumn = new AmCharts.AmSerialChart();
+	mouthCompColumn.dataProvider = mouthCompData;
+	mouthCompColumn.categoryField = "chartKey";
+  
+	mouthCompColumn.autoMargins = false;
+	mouthCompColumn.marginLeft = 5;
+	mouthCompColumn.marginRight = 5;
+	mouthCompColumn.marginTop = 0;
+	mouthCompColumn.marginBottom = 35;
+	 
+	// AXES
+	// category axis
+	var categoryAxis = mouthCompColumn.categoryAxis;
+	categoryAxis.gridCount = 0;
+	categoryAxis.gridAlpha = 0;
+	categoryAxis.gridColor = "#999";
+	categoryAxis.axisColor = "#999";
+	categoryAxis.labelRotation = 45;
+
+		
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = .1;
+	valueAxis.axisAlpha = 0;
+	mouthCompColumn.addValueAxis(valueAxis);
+
+	//otheryearAxis.inside = true;
+
+	//mouthCompColumn.addValueAxis(otheryearAxis);
+
+	// GRAPHS
+	// otheryear graph
+	var allGraph = new AmCharts.AmGraph();
+	allGraph.title = "全院";
+	allGraph.valueField = "allValue";
+	allGraph.type = "column";
+	//allGraph.valueAxis = otheryearAxis;
+	allGraph.legendValueText = "[[value]]";
+	allGraph.balloonText = "全院: <b>[[value]]万元</b> ";
+	allGraph.type = "column";
+	allGraph.lineAlpha = 0;
+	allGraph.fillAlphas = 0.8;
+	allGraph.fillColors = "#CCC"; 
+	
+	mouthCompColumn.addGraph(allGraph);
+
+	var outGraph = new AmCharts.AmGraph();
+	outGraph.title = "门诊";
+	outGraph.valueField = "outValue";
+	outGraph.type = "line";
+	//outGraph.valueAxis = otheryearAxis;
+	outGraph.lineColor = "#40BAF4";
+	outGraph.balloonText = "门诊：[[value]]万元";
+	outGraph.lineThickness = 1;
+	outGraph.legendValueText = "[[value]]";
+	outGraph.bullet = "round";
+	outGraph.bulletBorderColor = "#40BAF4";
+	outGraph.bulletBorderAlpha = 1;
+	outGraph.bulletBorderThickness = 1;
+	mouthCompColumn.addGraph(outGraph);
+
+	var inGraph = new AmCharts.AmGraph();
+	inGraph.title = "住院";
+	inGraph.valueField = "inValue";
+	inGraph.type = "line";
+	//inGraph.valueAxis = otheryearAxis;
+	inGraph.lineColor = "#78D542";
+	inGraph.balloonText = "住院：[[value]]万元";
+	inGraph.lineThickness = 1;
+	inGraph.legendValueText = "[[value]]";
+	inGraph.bullet = "round";
+	inGraph.bulletBorderColor = "#78D542";
+	inGraph.bulletBorderAlpha = 1;
+	inGraph.bulletBorderThickness = 1;
+	mouthCompColumn.addGraph(inGraph);
+
+	// CURSOR
+	var chartCursor = new AmCharts.ChartCursor();
+	chartCursor.zoomable = false;
+	chartCursor.cursorAlpha = 0;
+	chartCursor.valueLineEnabled = true;
+	chartCursor.valueLineBalloonEnabled = true;
+	mouthCompColumn.addChartCursor(chartCursor);
+
+	var legend1 = new AmCharts.AmLegend();
+	legend1.bulletType = "round";
+	legend1.equalWidths = true;
+	legend1.valueWidth = 40;
+	legend1.color = "#000000";
+	legend1.position = "top";
+	legend1.useGraphSettings = true;
+	mouthCompColumn.addLegend(legend1);
+
+	// WRITE
+	mouthCompColumn.write("income_trend_div");
+}
+
+//收入构成
+function incomePie() {
+	var incomeData = [ {
+		"chartKey" : "药品",
+		"chartValue" : 575.20,
+	}, {
+		"chartKey" : "手术",
+		"chartValue" : 55.70,
+	}, {
+		"chartKey" : "检查",
+		"chartValue" : 196.04,
+	}, {
+		"chartKey" : "检验",
+		"chartValue" : 150.49,
+	}, {
+		"chartKey" : "卫材",
+		"chartValue" : 130.38,
+	}, {
+		"chartKey" : "治疗",
+		"chartValue" : 73.58,
+	}, {
+		"chartKey" : "其他",
+		"chartValue" : 109.95,
+	} ];
+
+	// PIE CHART
+	var pie1 = new AmCharts.AmPieChart();
+	pie1.dataProvider = incomeData;
+	pie1.titleField = "chartKey";
+	pie1.valueField = "chartValue";
+	pie1.colorField = "chartColor";
+	pie1.sequencedAnimation = true;
+	pie1.startEffect = "elastic";
+	pie1.innerRadius = "40%";
+	pie1.startDuration = 2;
+	pie1.labelRadius = 1;
+	pie1.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b>万元 ([[percents]]%)</span>";
+	pie1.labelText = "";
+	pie1.startDuration = 2;
+	pie1.radius = 95;
+	pie1.labelRadius = 15;
+	pie1.pieX = "30%";
+	//pie1.addTitle("收入构成-全院");
+	// LEGEND
+	legend1 = new AmCharts.AmLegend();
+	
+	legend1.align = "right";
+	//legend1.color = "#FFF";
+	legend1.position = "absolute";
+	legend1.top = 0;
+	legend1.right = 20;
+	legend1.borderAlpha = 0;
+	legend1.valueWidth = 0.2;
+	legend1.horizontalGap = 0;
+	legend1.width = 60;
+	legend1.valueText = "";
+	
+	pie1.addLegend(legend1);
+	
+	pie1.write("income_construct_div");
+}
+
+
+function inpatientDept(){
+	// 住院收入柱形图
+	// 备注：左边的表格切换后，柱状图自动切换
+	var inpatientDept;
+	var inpatientDeptData=[
+	{
+			"chartKey": "胸心外科",
+			"chartValue": 66214.88
+	},
+	{
+			"chartKey": "骨科三",
+			"chartValue": 56642.07
+	},
+	{
+			"chartKey": "妇产科一",
+			"chartValue": 34601.79
+	},
+	{
+			"chartKey": "骨科二",
+			"chartValue": 34194.53
+	},
+	{
+			"chartKey": "神经内科二",
+			"chartValue": 32513.75
+	},
+	{
+			"chartKey": "肿瘤血液科一",
+			"chartValue": 30701.14
+	},
+	{
+			"chartKey": "肿瘤血液科二",
+			"chartValue": 30274.82
+	},
+	{
+			"chartKey": "神经内科一",
+			"chartValue": 29264.11
+	},
+	{
+			"chartKey": "消化内科",
+			"chartValue": 29103.87
+	},
+	{
+			"chartKey": "呼吸内科",
+			"chartValue": 26137.48
+	},
+	{
+			"chartKey": "ICU",
+			"chartValue": 25797.69
+	},
+	{
+			"chartKey": "普外科二",
+			"chartValue": 25437.90
+	},
+	{
+			"chartKey": "神经外科",
+			"chartValue": 23349.24
+	},
+	{
+			"chartKey": "儿科二",
+			"chartValue": 21452.90
+	},
+	{
+			"chartKey": "肾内风湿科",
+			"chartValue": 20951.29
+	},
+	{
+			"chartKey": "感染科",
+			"chartValue": 20910.86
+	},
+	{
+			"chartKey": "新生儿科",
+			"chartValue": 20743.30
+	}];
+	// SERIAL inpatientDept
+	inpatientDept = new AmCharts.AmSerialChart();
+	inpatientDept.dataProvider = inpatientDeptData;
+	inpatientDept.categoryField = "chartKey";
+	inpatientDept.startDuration = 1;
+	//inpatientDept.depth3D = 10; 
+
+
+	inpatientDept.autoMargins = false;
+	inpatientDept.marginLeft = 5;
+	inpatientDept.marginRight = 5;
+	inpatientDept.marginTop = 0;
+	inpatientDept.marginBottom = 50;
+
+
+	// AXES
+	// category
+	var categoryAxis = inpatientDept.categoryAxis;
+	categoryAxis.labelRotation = 90;
+	categoryAxis.gridPosition = "start";
+		
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = 0;
+	valueAxis.axisAlpha = 0;
+	inpatientDept.addValueAxis(valueAxis);
+
+	// GRAPH
+	var inpatientGraph = new AmCharts.AmGraph();
+	inpatientGraph.valueField = "chartValue";
+	inpatientGraph.balloonText = "[[category]]: <b>[[value]]</b>";
+	inpatientGraph.type = "column";
+	inpatientGraph.lineAlpha = 0;
+	inpatientGraph.fillAlphas = 0.8;
+	//inpatientGraph.fillColors = "#52B4F5"; 
+	inpatientDept.addGraph(inpatientGraph);
+
+	// CURSOR
+	var inpatientCursor = new AmCharts.ChartCursor();
+	inpatientCursor.cursorAlpha = 0;
+	inpatientCursor.zoomable = false;
+	inpatientCursor.categoryBalloonEnabled = false;
+	inpatientDept.addChartCursor(inpatientCursor);
+
+	inpatientDept.creditsPosition = "top-right";
+
+	inpatientDept.write("inpatientDeptdiv");	
+}
+function outpatientDoc(){
+	// 医生收入排名
+	var outpatientDoc;
+	var outpatientDocData=[
+		{
+				"chartKey": "姜荣",
+				"chartValue": 6946.03
+		},
+		{
+				"chartKey": "薛洁",
+				"chartValue": 3994.62
+		},
+		{
+				"chartKey": "蔡金娥",
+				"chartValue": 2366.73
+		},
+		{
+				"chartKey": "韦国玉",
+				"chartValue": 1206.87
+		},
+		{
+				"chartKey": "颜怀银",
+				"chartValue": 434.77
+		},
+		{
+				"chartKey": "周红",
+				"chartValue": 400.00
+		},
+		{
+				"chartKey": "黄锦翔",
+				"chartValue": 342.00
+		},
+		{
+				"chartKey": "邵雅平",
+				"chartValue": 81.00
+		},
+		{
+				"chartKey": "陶士阳",
+				"chartValue": 29.27
+		},
+		{
+				"chartKey": "李大元",
+				"chartValue": 26.50
+		},
+		{
+				"chartKey": "左玉琴",
+				"chartValue": 9.95
+		}
+	];
+	// SERIAL outpatientDoc
+	outpatientDoc = new AmCharts.AmSerialChart();
+	outpatientDoc.dataProvider = outpatientDocData;
+	outpatientDoc.categoryField = "chartKey";
+	outpatientDoc.startDuration = 1;
+	//outpatientDoc.depth3D = 10; 
+
+	outpatientDoc.autoMargins = false;
+	outpatientDoc.marginLeft = 5;
+	outpatientDoc.marginRight = 5;
+	outpatientDoc.marginTop = 0;
+	outpatientDoc.marginBottom = 50;
+
+	// AXES
+	// category
+	var categoryAxis = outpatientDoc.categoryAxis;
+	categoryAxis.labelRotation = 90;
+	categoryAxis.gridPosition = "start";
+		
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = 0;
+	valueAxis.axisAlpha = 0;
+	outpatientDoc.addValueAxis(valueAxis);
+
+	// GRAPH
+	var outpatientGraph = new AmCharts.AmGraph();
+	outpatientGraph.valueField = "chartValue";
+	outpatientGraph.balloonText = "[[category]]: <b>[[value]]</b>";
+	outpatientGraph.type = "column";
+	outpatientGraph.lineAlpha = 0;
+	outpatientGraph.fillAlphas = 0.8;
+	outpatientGraph.fillColors = "#6DD179"; 
+	outpatientDoc.addGraph(outpatientGraph);
+
+	// CURSOR
+	var outpatientCursor = new AmCharts.ChartCursor();
+	outpatientCursor.cursorAlpha = 0;
+	outpatientCursor.zoomable = false;
+	outpatientCursor.categoryBalloonEnabled = false;
+	outpatientDoc.addChartCursor(outpatientCursor);
+
+	outpatientDoc.creditsPosition = "top-right";
+
+	outpatientDoc.write("outpatientDocdiv");	
+}
+
+
+//大型设备收入排名
+function largeOrder(){
+	var largeOrderData= [ {
+		"chartKey" : "生化全套",
+		"chartValue" : 33.36
+    	}, {
+		"chartKey" : "胸部成像CT平扫",
+		"chartValue" : 21.01
+	}, {
+		"chartKey" : "颅脑CT平扫",
+		"chartValue" : 20.44
+	}, {
+		"chartKey" : "生化全套(干式)",
+		"chartValue" : 10.01
+	}, {
+		"chartKey" : "MRI头颅平扫",
+		"chartValue" : 9.88
+	}, {
+		"chartKey" : "感染免疫九项检查",
+		"chartValue" : 8.60
+	}, {
+		"chartKey" : "血液透析",
+		"chartValue" : 7.74
+	}, {
+		"chartKey" : "MRI腰椎平扫",
+		"chartValue" : 4.84
+	}, {
+		"chartKey" : "MRI头颅平扫",
+		"chartValue" : 4.83
+	}, {
+		"chartKey" : "三抗+乙肝三对",
+		"chartValue" : 4.45
+	} ];
+
+
+	var largeOrderColumn = new AmCharts.AmSerialChart();
+	largeOrderColumn.dataProvider = largeOrderData;
+	largeOrderColumn.categoryField = "chartKey";
+	largeOrderColumn.startDuration = 1;
+	largeOrderColumn.depth2D = 20;
+	largeOrderColumn.rotate = true;
+
+	var categoryAxis = largeOrderColumn.categoryAxis;
+	categoryAxis.labelRotation = 90;
+	categoryAxis.gridPosition = "start";
+
+	var graph = new AmCharts.AmGraph();
+	graph.valueField = "chartValue";
+	graph.balloonText = "[[category]]: <b>[[value]]</b>万元";
+	graph.type = "column";
+	graph.lineAlpha = 0;
+	graph.fillAlphas = 0.8;
+	graph.fillColors = "#FE8300";
+	largeOrderColumn.addGraph(graph);
+	
+	// AXES
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = .1;
+	valueAxis.axisAlpha = 0;
+	valueAxis.labelsEnabled = false;
+	largeOrderColumn.addValueAxis(valueAxis);
+
+	// CURSOR
+	var chartCursor = new AmCharts.ChartCursor();
+	chartCursor.cursorAlpha = 0;
+	chartCursor.zoomable = false;
+	//chartCursor.categoryBalloonEnabled = false;
+	largeOrderColumn.addChartCursor(chartCursor);
+
+	largeOrderColumn.creditsPosition = "top-right";
+	largeOrderColumn.write("large_order_div");
+}
+
+
+//门诊科室人均费用排名
+function clinicFee(){
+	var clinicFeeData= [ {
+		"chartKey" : "肾内科门诊",
+		"chartValue" : 602.91
+		}, {
+		"chartKey" : "放疗科门诊",
+		"chartValue" : 431.18
+		}, {
+		"chartKey" : "康复科门诊",
+		"chartValue" : 409.58
+		}, {
+		"chartKey" : "神经外科门诊",
+		"chartValue" : 362.72
+		}, {
+		"chartKey" : "消化科门诊",
+		"chartValue" : 354.60
+		} ];
+
+		var clinicOrderColumn = new AmCharts.AmSerialChart();
+		clinicOrderColumn.dataProvider =  clinicFeeData;
+		clinicOrderColumn.categoryField = "chartKey";
+		clinicOrderColumn.startDuration = 1;
+		clinicOrderColumn.depth2D = 20;
+		clinicOrderColumn.rotate = true;
+
+		var categoryAxis = clinicOrderColumn.categoryAxis;
+		categoryAxis.gridPosition = "start";
+		categoryAxis.labelRotation = 90;
+
+		var graph = new AmCharts.AmGraph();
+		graph.valueField = "chartValue";
+		graph.balloonText = "[[category]]: <b>[[value]]</b>元";
+		graph.type = "column";
+		graph.lineAlpha = 0;
+		graph.fillAlphas = 0.8;
+		graph.fillColors = "#35AA47";
+		clinicOrderColumn.addGraph(graph);
+
+		// AXES
+		var valueAxis = new AmCharts.ValueAxis();
+		valueAxis.gridAlpha = .1;
+		valueAxis.axisAlpha = 0;
+		valueAxis.labelsEnabled = false;
+		clinicOrderColumn.addValueAxis(valueAxis);
+
+		// CURSOR
+		var chartCursor = new AmCharts.ChartCursor();
+		chartCursor.cursorAlpha = 0;
+		chartCursor.zoomable = false;
+		chartCursor.categoryBalloonEnabled = false;
+		clinicOrderColumn.addChartCursor(chartCursor);
+		clinicOrderColumn.creditsPosition = "top-right";
+		clinicOrderColumn.write("clinic_fee_div");
+}
+
+//住院科室人均费用排名
+function inFee(){
+	var inFeeData= [ {
+		"chartKey" : "ICU",
+		"chartValue" : 10680.28
+		}, {
+		"chartKey" : "肿瘤血液科一",
+		"chartValue" : 10466.48
+		}, {
+		"chartKey" : "介入中心",
+		"chartValue" : 9522.81
+		}, {
+		"chartKey" : "肿瘤血液科二",
+		"chartValue" : 8637.44
+		}, {
+		"chartKey" : "神经外科",
+		"chartValue" : 8553.37
+		}, ];
+
+
+		var inOrderColumn = new AmCharts.AmSerialChart();
+		inOrderColumn.dataProvider =  inFeeData;
+		inOrderColumn.categoryField = "chartKey";
+		inOrderColumn.startDuration = 1;
+		inOrderColumn.depth2D = 20;
+		inOrderColumn.rotate = true;
+
+		var categoryAxis = inOrderColumn.categoryAxis;
+		categoryAxis.gridPosition = "start";
+		categoryAxis.labelRotation = 90;
+
+		var graph2 = new AmCharts.AmGraph();
+		graph2.valueField = "chartValue";
+		graph2.balloonText = "[[category]]: <b>[[value]]</b>元";
+		graph2.type = "column";
+		graph2.lineAlpha = 0;
+		graph2.fillAlphas = 0.8;
+		graph2.fillColors = "#7373FF";
+		inOrderColumn.addGraph(graph2);
+
+		// AXES
+		var valueAxis = new AmCharts.ValueAxis();
+		valueAxis.gridAlpha = .1;
+		valueAxis.axisAlpha = 0;
+		valueAxis.labelsEnabled = false;
+		inOrderColumn.addValueAxis(valueAxis);
+
+		// CURSOR
+		var chartCursor2 = new AmCharts.ChartCursor();
+		chartCursor2.cursorAlpha = 0;
+		chartCursor2.zoomable = false;
+		chartCursor2.categoryBalloonEnabled = false;
+		inOrderColumn.addChartCursor(chartCursor2);
+
+		inOrderColumn.creditsPosition = "top-right";
+		inOrderColumn.write("in_fee_div");
+}
+</script>

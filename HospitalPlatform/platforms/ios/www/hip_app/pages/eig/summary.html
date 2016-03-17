@@ -1,0 +1,311 @@
+<div class="content">
+    <div class="row" style="background:#DDF9FF;">
+      <div class="col-md-12">
+      	<div class="eig_title">最近7天数据上报趋势</div>
+        <div id="history-upload-holder" class="chart" style="height:240px;"></div>
+      </div>
+    </div>
+    <div class="row" style="background:#FFF4D2;position:relative;">
+      <div class="col-md-12">
+      	<div class="eig_score_fenxiang_title">分项得分</div>
+      	<div class="eig_score_zonghe_title">
+        	综合得分
+          <div class="zonghe">80</div>
+        </div>
+        <div id="radar-compare" class="chart" style="height:240px;margin-left:3em;"></div>
+      </div>
+    </div>
+    <div class="row" style="background:#EFFFDF;">
+      <div class="col-md-12">
+      	<div class="eig_title_green">最近7天综合得分趋势</div>
+        <div id="score-total" class="chart" style="height:240px;"></div>
+      </div>
+    </div>
+	</div>
+
+<script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/scripts/show-num.js" type="text/javascript"></script>
+<script>
+$(function(){	
+	historyUpload();
+	radarChart();
+	scoreTrend();
+});
+
+
+
+function historyUpload(){
+	//1_2近7天上报作业历史
+	var historyUploadChartData = eval("("
+			+ '[{"date":"05-20","startDateTime":"05-20","error":0,"total":2802},{"date":"05-21","startDateTime":"05-21","error":0,"total":2329},{"date":"05-22","startDateTime":"2015-05-22","error":17,"total":2280},{"date":"05-23","startDateTime":"2015-05-23","error":0,"total":2270},{"date":"05-24","startDateTime":"2015-05-24","error":0,"total":2421},{"date":"05-25","startDateTime":"2015-05-25","error":8,"total":2255},{"date":"05-26","startDateTime":"2015-05-26","error":9,"total":1998}]'
+			+ ")");
+	var historyUploadChart;
+	// SERIAL CHART
+	historyUploadChart = new AmCharts.AmSerialChart();
+	historyUploadChart.dataProvider = historyUploadChartData;
+	historyUploadChart.categoryField = "date";
+	historyUploadChart.startDuration = 0.5;
+	historyUploadChart.balloon.color = "#000000";
+	historyUploadChart.colors = [ "#00BFFF", "#EDC240" ];
+	
+	historyUploadChart.autoMargins = false;
+	historyUploadChart.marginLeft = 5;
+	historyUploadChart.marginRight = 5;
+	historyUploadChart.marginTop = 0;
+	historyUploadChart.marginBottom = 50;
+
+	// AXES
+	// GRAPHS
+	// total graph
+	var historyUploadTotalGraph = new AmCharts.AmGraph();
+	historyUploadTotalGraph.title = "上报总数";
+	historyUploadTotalGraph.valueField = "total";
+	historyUploadTotalGraph.balloonText = "[[title]]：[[value]]";
+	historyUploadTotalGraph.bullet = "round";
+	historyUploadTotalGraph.fillAlphas = 0.3;
+	historyUploadChart.addGraph(historyUploadTotalGraph);
+
+	// error graph
+	var historyUploadErrorGraph = new AmCharts.AmGraph();
+	historyUploadErrorGraph.title = "上报失败";
+	historyUploadErrorGraph.valueField = "error";
+	historyUploadErrorGraph.balloonText = "[[title]]：[[value]]";
+	historyUploadErrorGraph.bullet = "round";
+	historyUploadErrorGraph.fillAlphas = 0.6;
+	historyUploadChart.addGraph(historyUploadErrorGraph);
+
+	// CURSOR
+	var historyUploadChartCursor = new AmCharts.ChartCursor();
+	historyUploadChartCursor.cursorPosition = "mouse";
+	historyUploadChartCursor.zoomable = false;
+	historyUploadChartCursor.cursorAlpha = 0;
+	historyUploadChart.addChartCursor(historyUploadChartCursor);
+
+	// AXES
+	// category
+	var categoryAxis = historyUploadChart.categoryAxis;
+	//  categoryAxis.dateFormats = [{period:'DD',format:'MM-DD'}]
+	//  categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+	//  categoryAxis.minPeriod = "DD"; // our data is daily, so we set minPeriod to DD
+	categoryAxis.tickLength = 0;
+	categoryAxis.axisAlpha = 0;
+	categoryAxis.labelRotation = 45;
+
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.gridAlpha = 0;
+	valueAxis.axisAlpha = 0;
+	historyUploadChart.addValueAxis(valueAxis);
+
+
+	// LEGEND
+	var historyUploadLegend = new AmCharts.AmLegend();
+	historyUploadLegend.useGraphSettings = true;
+	historyUploadLegend.valueWidth = 0;
+	historyUploadLegend.forceWidth = true;
+	historyUploadLegend.labelWidth = 50;
+	historyUploadLegend.width = 240;
+	historyUploadLegend.valueAlign = "left";
+	historyUploadChart.addLegend(historyUploadLegend);
+
+	// TITLE
+	//historyUploadChart.addTitle("最近7天数据上报趋势");
+
+	// WRITE
+	historyUploadChart.write("history-upload-holder");
+}
+
+function radarChart() {
+	//RADAR CHART
+
+	var radarChart;
+	var radarData = [ {
+		"type" : "数据范围",
+		"count" : 71.4
+	}, {
+		"type" : "实际上报率",
+		"count" : 88.5
+	}, {
+		"type" : "规范性",
+		"count" : 95.0
+	}, {
+		"type" : "字段饱和度",
+		"count" : 70.6
+	}, {
+		"type" : "业务关联性",
+		"count" : 100.0
+	}, {
+		"type" : "及时性",
+		"count" : 0.0
+	}, {
+		"type" : "连续性",
+		"count" : 100.0
+	} ];
+
+	// RADAR CHART
+	radarChart = new AmCharts.AmRadarChart();
+	radarChart.dataProvider = radarData;
+	radarChart.categoryField = "type";
+	radarChart.startDuration = 2;
+	radarChart.startEffect = "easeOutSine";
+	radarChart.precision = 1;
+
+	radarChart.backgroundColor = "#000";
+	radarChart.radius = "40%";
+
+	// VALUE AXIS
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.axisAlpha = 0.15;
+	valueAxis.minimum = 0;
+	valueAxis.maximum = 100;
+	valueAxis.dashLength = 3;
+	valueAxis.axisTitleOffset = 10;
+	valueAxis.gridCount = 5;
+	radarChart.addValueAxis(valueAxis);
+
+	// GRAPH
+	var graph = new AmCharts.AmGraph();
+	graph.valueField = "count";
+	graph.bullet = "round";
+	graph.lineColor = "#00BBCC";
+	graph.fillAlphas = 0.2;
+	graph.balloonText = "[[category]]：[[value]]分 ";
+
+	// GUIDES
+	// blue fill
+	var guide = new AmCharts.Guide();
+	guide.angle = 0;
+	guide.tickLength = 0;
+	guide.toAngle = 360;
+	guide.value = 0;
+	guide.toValue = 60;
+	guide.fillColor = "#FFDC73";
+	guide.fillAlpha = 0.6;
+	valueAxis.addGuide(guide);
+
+	// GUIDES
+	// blue fill
+	var guide = new AmCharts.Guide();
+	guide.angle = 0;
+	guide.tickLength = 0;
+	guide.toAngle = 360;
+	guide.value = 60;
+	guide.toValue = 80;
+	guide.fillColor = "#DDF7FF";
+	guide.fillAlpha = 1;
+	valueAxis.addGuide(guide);
+
+	// GUIDES
+	// blue fill
+	var guide = new AmCharts.Guide();
+	guide.angle = 0;
+	guide.tickLength = 0;
+	guide.toAngle = 360;
+	guide.value = 80;
+	guide.toValue = 100;
+	guide.fillColor = "#E6FFDD";
+	guide.fillAlpha = 1;
+	valueAxis.addGuide(guide);
+
+	radarChart.addGraph(graph);
+
+	// WRITE
+	radarChart.write("radar-compare");
+}
+
+
+function scoreTrend(){
+	//得分趋势
+	var chart;
+
+	var chartData = [ {
+		"date" : "06-23",
+		"dataRange" : 71.4
+	}, {
+		"date" : "06-24",
+		"dataRange" : 74.4
+	}, {
+		"date" : "06-25",
+		"dataRange" : 78.4
+	}, {
+		"date" : "06-26",
+		"dataRange" : 81.4
+	}, {
+		"date" : "06-27",
+		"dataRange" : 82.4
+	}, {
+		"date" : "06-28",
+		"dataRange" : 84.4
+	}, {
+		"date" : "06-29",
+		"dataRange" : 85.4
+	} ];
+
+	// SERIAL CHART
+	// efficent CHART
+	chart = new AmCharts.AmSerialChart();
+	var everGraph = new AmCharts.AmGraph();
+	var gatherGraph = new AmCharts.AmGraph();
+
+	//chart.dataProvider = chartData;
+	chart.dataProvider = chartData;
+	chart.categoryField = "date";
+	chart.startDuration = 1;
+	chart.precision = 1;
+
+	// AXES
+	// category
+	var categoryAxis = chart.categoryAxis;
+	//categoryAxis.labelRotation = 0;
+	categoryAxis.labelRotation = 45;
+	categoryAxis.gridPosition = "start";
+
+	// value
+	// in case you don't want to change default settings of value axis,
+	// you don't need to create it, as one value axis is created automatically.
+
+	// GRAPH
+	var dataRangeGraph = new AmCharts.AmGraph();
+
+	dataRangeGraph.valueField = "dataRange";
+	dataRangeGraph.title = "综合得分";
+	dataRangeGraph.type = "line";
+	dataRangeGraph.lineThickness = 1;
+	//dataRangeGraph.lineColor = "#FCD202";
+	dataRangeGraph.bullet = "round";
+	dataRangeGraph.bulletBorderAlpha = 1;
+	dataRangeGraph.bulletBorderThickness = 2;
+	dataRangeGraph.labelPosition = "right";
+	dataRangeGraph.balloonText = "综合得分：[[value]]分 ";
+	chart.addGraph(dataRangeGraph);
+
+	// CURSOR
+	var chartCursor = new AmCharts.ChartCursor();
+	chartCursor.cursorAlpha = 0;
+	chartCursor.zoomable = false;
+	chartCursor.categoryBalloonEnabled = false;
+	chart.addChartCursor(chartCursor);
+
+	var categoryAxis = chart.categoryAxis;
+	categoryAxis.gridPosition = "start";
+	var valueAxis = new AmCharts.ValueAxis();
+	valueAxis.maximum = 100;
+	chart.addValueAxis(valueAxis);
+
+	// LEGEND
+	var legend = new AmCharts.AmLegend();
+	legend.bulletType = "square";
+	legend.equalWidths = true;
+	legend.valueWidth = 40;
+	legend.labelWidth = 60;
+	legend.useGraphSettings = true;
+	legend.forceWidth = true;
+	legend.borderColor = "#F00";
+	legend.borderAlpha = 0;
+	//chart.addLegend(legend);
+
+	chart.creditsPosition = "top-right";
+	// TITLE
+	//chart.addTitle("最近7天综合得分趋势");
+	chart.write("score-total");
+}
+</script>

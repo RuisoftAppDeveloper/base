@@ -1,0 +1,107 @@
+	<div class="row" style="padding-top:5px;">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <div class="dashboard-stat blue">
+        <div class="visual">
+        </div>
+        <div class="details">
+          <div class="number" style="padding-right:18px;">1998</div>
+          <span style="position:absolute;right:.5em;top:2.5em;color:#FFF;">条</span>
+          <div class="desc">当日上报总数据量(09-15)</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <div class="dashboard-stat green">
+        <div class="visual">
+        </div>
+        <div class="details">
+          <div class="number">99.5%</div>
+          <div class="desc">当日上报成功率(09-15)</div>
+        </div>
+      </div>
+    </div>
+	</div>
+	<div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="portlet box purple" id="service-detail">
+        <div class="portlet-title">
+          <div class="caption">当日数据上报量占比</div>
+          <div class="date-range"><i class="fa fa-calendar"></i> 09-15</div>
+        </div>
+        <div class="portlet-body">
+          <div id="data-upload-holder" class="chart" style="height:600px;"></div>
+        </div>
+      </div>
+    </div>
+	</div>
+
+<script>
+$(function(){	
+	uploadData(16355);
+	$("#update-date").width($(".row:eq(1)").width()-20);
+});
+
+
+
+function uploadData(total){
+  // 分项上报
+  chart = new AmCharts.AmPieChart();
+  legend = new AmCharts.AmLegend();
+	
+	var info = [{"business":"住院诊疗出院记录(例)","value":831},
+				{"business":"人员的证件信息(条)","value":2},
+				{"business":"住院诊疗诊断记录(例)","value":1222},
+				{"business":"住院诊疗入院记录(例)","value":886},
+				{"business":"住院诊疗费用结算(笔)","value":1375},
+				{"business":"人员的基本信息(份)","value":49},
+				{"business":"住院诊疗费用明细(笔)","value":0},
+				{"business":"门诊诊疗挂号记录(例)","value":5947},
+				{"business":"门急诊诊疗病历(份)","value":5907},
+				{"business":"门诊诊疗费用记录(例)","value":136}];
+	
+  // title of the chart
+  //chart.addTitle("Visitors countries", 16);
+
+  //对于空和非空数据的处理,根据上报总数据量判断
+  //alert(total)
+  if(total > 0) {
+    chart.dataProvider = info;
+    legend.valueText = "[[[value]]]";
+    chart.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+  } else {
+    chart.dataProvider = [{"business":"无数据", "value":"1"}];
+    chart.colors = ["#CCC"];
+    legend.valueText = "";
+    chart.balloonText = "";
+  }
+
+  chart.titleField = "business";
+  chart.valueField = "value";
+  chart.sequencedAnimation = true;
+  chart.innerRadius = "40%";
+  //chart.pieX = "45%";
+  //chart.pieY = "45%";
+  chart.labelText = "";
+  chart.startDuration = 0.5;
+  chart.radius = 120;
+  chart.labelRadius = 15;
+  chart.startEffect = "easeOutSine";
+
+  // LEGEND
+  legend.align = "bottom"
+  //legend.position = "absolute";
+  legend.borderAlpha = 0;
+  legend.horizontalGap = 0;
+	legend.forceWidth = true;
+  legend.width = $(window).width();
+  legend.labelWidth = $(window).width();
+	legend.valueWidth = 150;
+  //legend.valueText = "";
+  
+  chart.addLegend(legend);
+
+  // WRITE                                 
+  chart.write("data-upload-holder");
+}
+
+</script>
